@@ -1,0 +1,148 @@
+
+<!DOCTYPE html><html class=''>
+<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/matikbird/pen/owVabg?editors=1000" />
+
+
+<style class="cp-pen-styles">body{background:#ecf0f1;}
+a{text-decoration:none;}
+.firstLine {
+    font-size: 24px;
+    font-weight: 300;
+}.secondLine {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 600;
+} .thirdLine {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 300;
+}.fourthLine {
+    font-size: 12px;
+    font-weight: 300;
+    position: relative;
+    top: -10px;
+}
+
+.badges {
+    position:relative;
+    margin:140px auto;
+    width:200px;
+    height:200px;
+    background:#552F87;
+    border-radius:100%;
+    color: #FFF;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Open Sans",sans-serif;
+    -webkit-animation: 3s ease-in-out 0s normal none infinite running swing;
+    -moz-animation: 3s ease-in-out 0s normal none infinite running swing;
+    -o-animation: 3s ease-in-out 0s normal none infinite running swing;
+    animation: 3s ease-in-out 0s normal none infinite running swing;
+    
+    -webkit-transform-origin: 100px -71px;
+    -moz-transform-origin: 100px -71px;
+    -o-transform-origin: 100px -71px;
+    transform-origin: 100px -71px;
+}
+.badges:before{
+    content:'';
+    position:absolute;
+    top:90px;left:90px;
+    width:20px;height:20px;
+    border-radius:100%;
+    -webkit-box-shadow: 0px -82px 0px -2px #fff, 0px -100px #552F87,20px -98px #552F87,39px -94px #552F87,56px -85px #552F87,71px -72px #552F87,
+                83px -57px #552F87,93px -40px #552F87,98px -20px #552F87,100px 0px #552F87,
+                
+                -20px -98px #552F87,-39px -94px #552F87,-71px -72px #552F87,
+                -56px -85px #552F87,-83px -57px #552F87,-93px -40px #552F87,-98px -20px #552F87,-100px 0px #552F87,
+                
+                0px 100px #552F87,-20px 98px #552F87,-39px 94px #552F87,-56px 85px #552F87,
+                -71px 72px #552F87,-83px 57px #552F87,-93px -40px #552F87,-98px 20px #552F87,-93px 40px #552F87,
+                
+                20px 98px #552F87,39px 94px #552F87,56px 85px #552F87,
+                71px 72px #552F87,83px 57px #552F87,93px 40px #552F87,98px 20px #552F87;
+                
+    
+    -moz-box-shadow: 0px -82px 0px -2px #fff, 0px -100px #552F87,20px -98px #552F87,39px -94px #552F87,56px -85px #552F87,71px -72px #552F87,
+                83px -57px #552F87,93px -40px #552F87,98px -20px #552F87,100px 0px #552F87,
+                
+                -20px -98px #552F87,-39px -94px #552F87,-71px -72px #552F87,
+                -56px -85px #552F87,-83px -57px #552F87,-93px -40px #552F87,-98px -20px #552F87,-100px 0px #552F87,
+                
+                0px 100px #552F87,-20px 98px #552F87,-39px 94px #552F87,-56px 85px #552F87,
+                -71px 72px #552F87,-83px 57px #552F87,-93px -40px #552F87,-98px 20px #552F87,-93px 40px #552F87,
+                
+                20px 98px #552F87,39px 94px #552F87,56px 85px #552F87,
+                71px 72px #552F87,83px 57px #552F87,93px 40px #552F87,98px 20px #552F87;
+                
+    
+    -o-box-shadow: 0px -82px 0px -2px #fff, 0px -100px #552F87,20px -98px #552F87,39px -94px #552F87,56px -85px #552F87,71px -72px #552F87,
+                83px -57px #552F87,93px -40px #552F87,98px -20px #552F87,100px 0px #552F87,
+                
+                -20px -98px #552F87,-39px -94px #552F87,-71px -72px #552F87,
+                -56px -85px #552F87,-83px -57px #552F87,-93px -40px #552F87,-98px -20px #552F87,-100px 0px #552F87,
+                
+                0px 100px #552F87,-20px 98px #552F87,-39px 94px #552F87,-56px 85px #552F87,
+                -71px 72px #552F87,-83px 57px #552F87,-93px -40px #552F87,-98px 20px #552F87,-93px 40px #552F87,
+                
+                20px 98px #552F87,39px 94px #552F87,56px 85px #552F87,
+                71px 72px #552F87,83px 57px #552F87,93px 40px #552F87,98px 20px #552F87;
+                
+    
+    box-shadow: 0px -82px 0px -2px #fff, 0px -100px #552F87,20px -98px #552F87,39px -94px #552F87,56px -85px #552F87,71px -72px #552F87,
+                83px -57px #552F87,93px -40px #552F87,98px -20px #552F87,100px 0px #552F87,
+                
+                -20px -98px #552F87,-39px -94px #552F87,-71px -72px #552F87,
+                -56px -85px #552F87,-83px -57px #552F87,-93px -40px #552F87,-98px -20px #552F87,-100px 0px #552F87,
+                
+                0px 100px #552F87,-20px 98px #552F87,-39px 94px #552F87,-56px 85px #552F87,
+                -71px 72px #552F87,-83px 57px #552F87,-93px -40px #552F87,-98px 20px #552F87,-93px 40px #552F87,
+                
+                20px 98px #552F87,39px 94px #552F87,56px 85px #552F87,
+                71px 72px #552F87,83px 57px #552F87,93px 40px #552F87,98px 20px #552F87;
+}
+.badges:after{
+    content:'';
+    position:absolute;
+    top:-70px;left:99px;
+    width:2px;height:81px;
+    border-radius:0%;
+    background:#000;
+}
+
+@-webkit-keyframes swing{
+    0%{-webkit-transform:rotate(5deg);}
+    50%{-webkit-transform:rotate(-5deg);}
+    100%{-webkit-transform:rotate(5deg);}
+}
+@-moz-keyframes swing{
+    0%{-moz-transform:rotate(5deg);}
+    50%{-moz-transform:rotate(-5deg);}
+    100%{-moz-transform:rotate(5deg);}
+}
+@-o-keyframes swing{
+    0%{-o-transform:rotate(5deg);}
+    50%{-o-transform:rotate(-5deg);}
+    100%{-o-transform:rotate(5deg);}
+}
+@keyframes swing{
+    0%{transform:rotate(5deg);}
+    50%{transform:rotate(-5deg);}
+    100%{transform:rotate(5deg);}
+}</style></head><body>
+<a href="#">
+<div class="badges"><br>
+    <p>
+        <span class="firstLine">GET UP TO</span><br>
+        <span class="secondLine">$10,000</span><br>
+        <span class="thirdLine">PER MONTH</span><br>
+        <span class="fourthLine">AS A POPULAR INVESTOR</span>
+    </p>
+</div>
+</a>
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+<script>/* Hangs Breaker */
+//# sourceURL=pen.js
+</script>
+</body></html>

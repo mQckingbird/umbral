@@ -1,0 +1,542 @@
+
+<!DOCTYPE html><html class=''>
+<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/matikbird/pen/mmjWvB" />
+
+
+<style class="cp-pen-styles">@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
+.more-pens {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
+  font-family: "Montserrat";
+  font-size: 12px;
+}
+
+a.white-mode, a.white-mode:link, a.white-mode:visited, a.white-mode:active {
+  font-family: "Montserrat";
+  font-size: 12px;
+  text-decoration: none;
+  background: #212121;
+  padding: 4px 8px;
+  color: #f7f7f7;
+}
+a.white-mode:hover, a.white-mode:link:hover, a.white-mode:visited:hover, a.white-mode:active:hover {
+  background: #edf3f8;
+  color: #212121;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  cursor: none;
+}
+
+.title {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: "Montserrat";
+  text-align: center;
+  width: 100%;
+}
+.title h1 {
+  position: relative;
+  color: #EEEEEE;
+  font-weight: 600;
+  font-size: 60px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 0 30px #000155;
+}
+.title h1 span {
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  color: #BBB;
+}
+.title h3 {
+  font-weight: 200;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  color: #EEEEEE;
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px #000155;
+}
+
+
+ul.ribbon-badge{
+    padding:0;
+    margin:0px auto;
+    width:245px;
+    height:245px;
+    border-radius:50%;
+    position:fixed;
+    right:20px;
+    box-shadow:
+        0 0 25px 0 black,
+        0 0 25px 0 #000 inset;
+}
+ul.ribbon-badge  li{
+    z-index:0;
+    display:inline-block;
+    background:#3875ff;
+    width:250px;
+    height:35px;
+    left:-3px;
+    top:105px;
+    position:absolute;
+}
+
+
+
+ ul.ribbon-badge li.strip:nth-child(2){
+/*transform*/
+-webkit-transform:rotate(30deg);
+   -moz-transform:rotate(30deg);
+    -ms-transform:rotate(30deg);
+     -o-transform:rotate(30deg);
+        transform:rotate(30deg);
+}
+ul.ribbon-badge li.strip:nth-child(3){
+/*transform*/
+-webkit-transform:rotate(60deg);
+   -moz-transform:rotate(60deg);
+    -ms-transform:rotate(60deg);
+     -o-transform:rotate(60deg);
+        transform:rotate(60deg);
+}
+ul.ribbon-badge li.strip:nth-child(4){
+/*transform*/
+-webkit-transform:rotate(90deg);
+   -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+     -o-transform:rotate(90deg);
+        transform:rotate(90deg);
+}
+ul.ribbon-badge li.strip:nth-child(5){
+/*transform*/
+-webkit-transform:rotate(120deg);
+   -moz-transform:rotate(120deg);
+    -ms-transform:rotate(120deg);
+     -o-transform:rotate(120deg);
+        transform:rotate(120deg);
+}
+ul.ribbon-badge li.strip:nth-child(6){
+/*transform*/
+-webkit-transform:rotate(150deg);
+   -moz-transform:rotate(150deg);
+    -ms-transform:rotate(150deg);
+     -o-transform:rotate(150deg);
+        transform:rotate(150deg);
+}
+  
+ul.ribbon-badge li.strip:after{
+content:"";
+display:inline-block;
+background:#3875ff;
+width:250px;
+height:35px;
+left:-3px;
+top:105px;
+/*transform*/
+-webkit-transform:rotate(10deg);
+   -moz-transform:rotate(10deg);
+    -ms-transform:rotate(10deg);
+     -o-transform:rotate(10deg);
+        transform:rotate(10deg);
+}
+ 
+ul.ribbon-badge, 
+ul.ribbon-badge li.strip, 
+ul.ribbon-badge li.strip:after,
+ul.ribbon-badge li.strip:before{
+            background:#0093ff;
+            background: linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            linear-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+     background: -webkit-linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            -webkit-linear-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+    background:-webkit-gradient(linear,left bottom,right top,color-stop(40%,transparent),color-stop(40%,rgba(113, 113, 113, 0.28)),color-stop(60%,rgba(178, 216, 255, 0.85)),color-stop(60%,transparent)),-webkit-gradient(linear, left top, left bottom, from(rgba(0, 147, 255, 0.6)),to(rgba(0, 147, 255, 0.6)));
+     background: -moz-linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            -moz-linear-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+     background: -o-linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            -o-linear-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+     background: -ms-linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            -ms-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+            background-size: 4px 4px;
+}
+  
+ul.ribbon-badge li.strip:before{
+    content:"";
+    display:inline-block;
+    background:radial-gradient(circle,black,rgba(62, 151, 255, 0.25));
+    width:250px;
+    height:40px;
+    position:absolute;
+}
+
+ul.ribbon-badge li.inner{
+    z-index:10;
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background-color:#0093ff;
+    background: linear-gradient(90deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),linear-gradient(#67bfff,#22a2ff);
+    background: -webkit-linear-gradient(0deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),-webkit-linear-gradient(#67bfff,#22a2ff);
+    background: -webkit-gradient(linear, left top, right top, color-stop(30%,transparent),color-stop(30%,rgba(0, 130, 226, 0.59)),color-stop(70%,rgba(106, 192, 255, 0.72)),color-stop(70%,transparent)), -webkit-gradient(linear, left top, left bottom, from(#67bfff),to(#22a2ff));
+    background: -moz-linear-gradient(0deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),-moz-linear-gradient(#67bfff,#22a2ff);
+    background: -o-linear-gradient(0deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),-o-linear-gradient(#67bfff,#22a2ff);
+    background: -ms-linear-gradient(0deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),-ms-linear-gradient(#67bfff,#22a2ff);
+    background-size: 3px 3px;
+    position:absolute;
+    left:36px;
+    top:39px;
+    box-shadow:
+        0 0 0 1px rgba(253, 253, 253, 0.26)  inset,
+        0 0 0 3px #33a9ff  inset,
+        0 0 0 4px #2fa7ff inset,
+        0 0 2px 5px rgba(0, 57, 98, 0.62) inset,
+        0 0 5px 0 rgba(0, 0, 0, 0.57),
+        0 0 40px 5px rgba(0, 0, 0, 0.42);
+} 
+
+
+ul.ribbon-badge li.inner:after,
+ul.ribbon-badge li.inner:before{
+    display:none;
+}
+ul.ribbon-badge li.inner span{
+    position:absolute;
+    color:#3379ff;
+    color:rgba(51, 121, 255, 0.48);
+    text-align:center;
+    font-size:25px;
+    font-weight:bolder;
+    font-family:verdana;
+    text-transform:uppercase;
+    line-height:30px;
+    letter-spacing:-3px;
+    top:45px;
+    left:-2px;
+    
+}
+/*following lines will add inner shadow effect to text*/
+ul.ribbon-badge li.inner span:before, .inner span:after{
+    content: attr(title);
+    position:absolute;
+}
+ul.ribbon-badge li.inner span:before{
+    top:1px;
+    left:1px;
+    color:#262626;
+    color:rgba(38, 38, 38, 0.39);
+}
+ul.ribbon-badge li.inner span:after{
+    top:2px;
+    left:2px;
+    color:#1b8eff;
+    color:rgba(27, 142, 255, 0.29);
+}
+
+ul.ribbon-badge li.tail{
+    position:absolute;
+    top:220px;
+    background:none;
+    z-index:-1;   
+}  
+ul.ribbon-badge li.tail:before, 
+ul.ribbon-badge li.tail:after{
+    content:"";
+    position:absolute;
+    background-color:#1b8eff;
+    background-image:linear-gradient(0deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+background-image:-webkit-linear-gradient(90deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),-webkit-linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+background-image:-webkit-gradient(linear,left bottom,left top,color-stop(20%,transparent),color-stop(20%,rgba(113, 113, 113, 0.28)),color-stop(40%,rgba(178, 216, 255, 0.85)), color-stop(40%,transparent),color-stop(60%,rgba(113, 113, 113, 0.28)),color-stop(80%,rgba(178, 216, 255, 0.85)),color-stop(80%,transparent)),-webkit-gradient(linear,left top,left bottom,from(rgba(26, 134, 214, 0.6)),to(rgba(0, 89, 154, 0.6))); 
+background-image:-moz-linear-gradient(90deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),-moz-linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+background-image:-o-linear-gradient(90deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),-o-linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+background-image:-ms-linear-gradient(90deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),-ms-linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+    background-size:4px 4px;
+    box-shadow:8px 0 10px 2px rgba(0, 0, 0, 0.28);  
+            /*backface-visibility*/
+-webkit-backface-visibility:hidden;
+   -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+     -o-backface-visibility:hidden;
+        backface-visibility:hidden;
+    width:0;
+    height:0;
+    border:25px solid transparent;
+    left:0;
+    border-left:25px solid rgb(41, 41, 41);
+    border-right-width:150px;
+}
+
+ul.ribbon-badge li.tail:before{
+-webkit-transform:rotate(-75deg);
+   -moz-transform:rotate(-75deg);
+    -ms-transform:rotate(-75deg);
+     -o-transform:rotate(-75deg);
+        transform:rotate(-75deg);
+}
+ul.ribbon-badge li.tail:after{
+-webkit-transform:rotate(-105deg);
+   -moz-transform:rotate(-105deg);
+    -ms-transform:rotate(-105deg);
+     -o-transform:rotate(-105deg);
+        transform:rotate(-105deg);
+        top:0;
+        left:70px;
+}
+.badge{margin-left:15px; display:inline-block;min-width:10px;padding:3px 7px;font-size:13px;font-weight:bold;color:#ffffff;line-height:1;vertical-align:middle;white-space:nowrap;text-align:center;background-color:#2780e3;border-radius:10px;
+  
+  }.badge:empty{display:none}
+</style></head><body>
+<div class="title">
+    <h3 style="text-align:center;"><img src="http://umbralcapacitacion.com/assets/umbral.png" style="width:250px"></h3>
+    <h1>MASAJE HOLÍSTICO</h1>
+    <h3>Conexión entre cuerpo y alma<br><div class="badge">6 meses</div><div class="badge">05/09/2017</div><div class="badge">Martes</div><br><a style="padding-left: 15px;">umbralcapacitacion.com</a>
+      <ul class="ribbon-badge">
+    <li class="inner"><img src="img/omee.png" style="
+    width: 100%;
+    margin-left: -2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="tail"></li>
+</ul>
+
+    </h3>
+  </div>
+
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script>'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var max_particles = 150;
+var particles = [];
+var frequency = 200;
+
+// Popolate particles
+popolate(max_particles);
+
+var tela = document.createElement('canvas');
+tela.width = $(window).width();
+tela.height = $(window).height();
+$("body").append(tela);
+
+var canvas = tela.getContext('2d');
+
+var Particle = function () {
+  function Particle(canvas) {
+    _classCallCheck(this, Particle);
+
+    var colors = ["#E5493F", "#55C1FF", "#26B9A0", "#5A52FF"];
+    // let colors = ["#feea00","#a9df85","#5dc0ad", "#ff9a00","#fa3f20"]
+    var types = ["full", "fill", "empty", "square", "square-in-circle"];
+
+    this.random = Math.random();
+    this.canvas = canvas;
+
+    this.lineWidth = 0.2 + 2.8 * this.random;
+
+    this.speed = 2 + Math.random() * 3;
+
+    this.progress = 0;
+    this.progress_inc = this.random > 0.5 ? this.random * (this.speed * 1.5) : this.random * -(this.speed * 1.5);
+
+    this.vx = Math.random() * this.speed - Math.random() * this.speed;
+    this.vy = Math.random() * this.speed - Math.random() * this.speed;
+    this.radius = 10 + Math.round(Math.random() * 50);
+    this.w = $(window).width();
+    this.h = $(window).height();
+    this.x = (this.w - this.radius) / 2;
+    this.y = (this.h - this.radius) / 2;
+
+    this.radius = 1 + 8 * this.random;
+    this.type = types[this.randomIntFromInterval(0, types.length - 1)];
+    this.color = colors[this.randomIntFromInterval(0, colors.length - 1)];
+  }
+
+  Particle.prototype.getCoordinates = function getCoordinates() {
+    return {
+      x: this.x,
+      y: this.y
+    };
+  };
+
+  Particle.prototype.randomIntFromInterval = function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  Particle.prototype.render = function render() {
+    // Create arc
+    var color = this.color;
+    switch (this.type) {
+      case "square":
+        this.drawRotatedRect(this.x, this.y, this.radius * 2, this.radius * 2, this.progress, color);
+        break;
+      case "square-in-circle":
+        this.drawRotatedRect(this.x, this.y, this.radius * 2, this.radius * 2, this.progress, color);
+        this.createArcEmpty(this.radius + this.lineWidth * 3, this.lineWidth, color);
+        break;
+      case "full":
+        this.createArcFill(this.radius, color);
+        this.createArcEmpty(this.radius + this.lineWidth, this.lineWidth / 2, color);
+        break;
+      case "fill":
+        this.createArcFill(this.radius, color);
+        break;
+      case "empty":
+        this.createArcEmpty(this.radius, this.lineWidth, color);
+        break;
+    }
+  };
+
+  Particle.prototype.createArcFill = function createArcFill(radius, color) {
+    this.canvas.beginPath();
+    this.canvas.arc(this.x, this.y, radius / 1.5, 0, 2 * Math.PI);
+    this.canvas.fillStyle = color;
+    this.canvas.fill();
+    this.canvas.closePath();
+  };
+
+  Particle.prototype.createArcEmpty = function createArcEmpty(radius, lineWidth, color) {
+    this.canvas.beginPath();
+    this.canvas.arc(this.x, this.y, radius, 0, 2 * Math.PI);
+    this.canvas.lineWidth = lineWidth;
+    this.canvas.strokeStyle = color;
+    this.canvas.stroke();
+    this.canvas.closePath();
+  };
+
+  Particle.prototype.drawRotatedRect = function drawRotatedRect(x, y, width, height, degrees, color) {
+    this.canvas.save();
+    this.canvas.beginPath();
+    this.canvas.translate(x - this.radius + width / 2, y - this.radius + height / 2);
+    this.canvas.rotate(degrees * Math.PI / 180);
+    this.canvas.rect(-(width / 2), -(height / 2), width, height);
+    this.canvas.fillStyle = color;
+    this.canvas.fill();
+    this.canvas.restore();
+  };
+
+  Particle.prototype.move = function move() {
+    this.progress += this.progress_inc;
+    var diff = this.radius;
+    switch (this.type) {
+      case "full":
+        diff = this.radius + this.lineWidth * 2;
+        break;
+      case "square-in-circle":
+        diff = this.radius + this.lineWidth * 3;
+        break;
+      case "empty":
+        diff = this.radius + this.lineWidth;
+        break;
+    }
+
+    this.x = this.x + this.vx;
+    this.y = this.y + this.vy;
+
+    if (this.x < diff || this.x > this.w - diff) {
+      this.vx = -this.vx;
+    }
+    if (this.y < diff || this.y > this.h - diff) {
+      this.vy = -this.vy;
+    }
+    this.render();
+    return true;
+  };
+
+  Particle.prototype.calculateDistance = function calculateDistance(v1, v2) {
+    var x = Math.abs(v1.x - v2.x);
+    var y = Math.abs(v1.y - v2.y);
+    return Math.sqrt(x * x + y * y);
+  };
+
+  return Particle;
+}();
+
+/*
+ * Function to clear layer canvas
+ * @num:number number of particles
+ */
+
+function popolate(num) {
+  for (var i = 0; i < num; i++) {
+    setTimeout(function (x) {
+      return function () {
+        // Add particle
+        particles.push(new Particle(canvas));
+      };
+    }(i), frequency * i);
+  }
+  return particles.length;
+}
+
+function clear() {
+  canvas.fillStyle = '#101018';
+  canvas.fillRect(0, 0, tela.width, tela.height);
+}
+
+function calculateDistance(v1, v2) {
+  var x = Math.abs(v1.x - v2.x);
+  var y = Math.abs(v1.y - v2.y);
+  return Math.sqrt(x * x + y * y);
+}
+
+function connection() {
+  var old_element = null;
+  $.each(particles, function (i, element) {
+    if (i > 0 && (i % 3 == 0 || i % 7 == 0)) {
+      var box1 = old_element.getCoordinates();
+      var box2 = element.getCoordinates();
+      canvas.beginPath();
+      canvas.moveTo(box1.x, box1.y);
+      canvas.lineTo(box2.x, box2.y);
+      canvas.lineWidth = 0.8;
+      canvas.strokeStyle = "#32323C";
+      if (i % 7 == 0) {
+        //canvas.strokeStyle="#3f47ff";
+      }
+      canvas.stroke();
+      canvas.closePath();
+    }
+
+    old_element = element;
+  });
+}
+
+/*
+ * Function to update particles in canvas
+ */
+function update() {
+  clear();
+  connection();
+  particles = particles.filter(function (p) {
+    return p.move();
+  });
+  requestAnimationFrame(update.bind(this));
+}
+
+update();
+//# sourceURL=pen.js
+</script>
+</body></html>

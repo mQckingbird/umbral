@@ -1,0 +1,2445 @@
+
+<!DOCTYPE html><html class=''>
+<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/mknadler/pen/zGQjVX" />
+
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+<style class="cp-pen-styles">* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.vert,
+.horiz {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.vert {
+  z-index: 1;
+}
+
+.horiz {
+  z-index: 2;
+}
+
+.ribbon {
+  width: 1%;
+  height: 100%;
+  float: left;
+  display: block;
+}
+.ribbon:nth-child(1) {
+  background: -webkit-linear-gradient(bottom, rgba(126, 6, 169, 0.5), rgba(255, 10, 255, 0.5));
+  background: linear-gradient(bottom, rgba(126, 6, 169, 0.5), rgba(255, 10, 255, 0.5));
+  -webkit-animation: fade-1 1s linear infinite alternate;
+          animation: fade-1 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-1 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-1 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(2) {
+  background: -webkit-linear-gradient(bottom, rgba(208, 48, 255, 0.5), rgba(255, 50, 255, 0.5));
+  background: linear-gradient(bottom, rgba(208, 48, 255, 0.5), rgba(255, 50, 255, 0.5));
+  -webkit-animation: fade-2 5s linear infinite alternate;
+          animation: fade-2 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-2 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-2 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(3) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 3, 194, 0.5), rgba(255, 61, 80, 0.5));
+  background: linear-gradient(bottom, rgba(255, 3, 194, 0.5), rgba(255, 61, 80, 0.5));
+  -webkit-animation: fade-3 2s linear infinite alternate;
+          animation: fade-3 2s linear infinite alternate;
+}
+@-webkit-keyframes fade-3 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-3 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(4) {
+  background: -webkit-linear-gradient(bottom, rgba(57, 1, 255, 0.5), rgba(172, 123, 255, 0.5));
+  background: linear-gradient(bottom, rgba(57, 1, 255, 0.5), rgba(172, 123, 255, 0.5));
+  -webkit-animation: fade-4 1s linear infinite alternate;
+          animation: fade-4 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-4 {
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes fade-4 {
+  to {
+    opacity: 0.8;
+  }
+}
+.ribbon:nth-child(5) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 27, 144, 0.5), rgba(255, 127, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 27, 144, 0.5), rgba(255, 127, 255, 0.5));
+  -webkit-animation: fade-5 7s linear infinite alternate;
+          animation: fade-5 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-5 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-5 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(6) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 37, 224, 0.5), rgba(255, 35, 28, 0.5));
+  background: linear-gradient(bottom, rgba(255, 37, 224, 0.5), rgba(255, 35, 28, 0.5));
+  -webkit-animation: fade-6 3s linear infinite alternate;
+          animation: fade-6 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-6 {
+  to {
+    opacity: 0.4;
+  }
+}
+@keyframes fade-6 {
+  to {
+    opacity: 0.4;
+  }
+}
+.ribbon:nth-child(7) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 36, 255, 0.5), rgba(211, 78, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 36, 255, 0.5), rgba(211, 78, 255, 0.5));
+  -webkit-animation: fade-7 1s linear infinite alternate;
+          animation: fade-7 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-7 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-7 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(8) {
+  background: -webkit-linear-gradient(bottom, rgba(128, 13, 255, 0.5), rgba(255, 8, 191, 0.5));
+  background: linear-gradient(bottom, rgba(128, 13, 255, 0.5), rgba(255, 8, 191, 0.5));
+  -webkit-animation: fade-8 3s linear infinite alternate;
+          animation: fade-8 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-8 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-8 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(9) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 20, 205, 0.5), rgba(255, 77, 49, 0.5));
+  background: linear-gradient(bottom, rgba(255, 20, 205, 0.5), rgba(255, 77, 49, 0.5));
+  -webkit-animation: fade-9 2s linear infinite alternate;
+          animation: fade-9 2s linear infinite alternate;
+}
+@-webkit-keyframes fade-9 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-9 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(10) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 18, 211, 0.5), rgba(185, 32, 5, 0.5));
+  background: linear-gradient(bottom, rgba(255, 18, 211, 0.5), rgba(185, 32, 5, 0.5));
+  -webkit-animation: fade-10 4s linear infinite alternate;
+          animation: fade-10 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-10 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-10 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(11) {
+  background: -webkit-linear-gradient(bottom, rgba(236, 2, 67, 0.5), rgba(255, 132, 151, 0.5));
+  background: linear-gradient(bottom, rgba(236, 2, 67, 0.5), rgba(255, 132, 151, 0.5));
+  -webkit-animation: fade-11 4s linear infinite alternate;
+          animation: fade-11 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-11 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-11 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(12) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 26, 255, 0.5), rgba(105, 38, 24, 0.5));
+  background: linear-gradient(bottom, rgba(255, 26, 255, 0.5), rgba(105, 38, 24, 0.5));
+  -webkit-animation: fade-12 5s linear infinite alternate;
+          animation: fade-12 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-12 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-12 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(13) {
+  background: -webkit-linear-gradient(bottom, rgba(92, 25, 255, 0.5), rgba(255, 143, 170, 0.5));
+  background: linear-gradient(bottom, rgba(92, 25, 255, 0.5), rgba(255, 143, 170, 0.5));
+  -webkit-animation: fade-13 4s linear infinite alternate;
+          animation: fade-13 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-13 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-13 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(14) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 46, 255, 0.5), rgba(63, 103, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 46, 255, 0.5), rgba(63, 103, 255, 0.5));
+  -webkit-animation: fade-14 6s linear infinite alternate;
+          animation: fade-14 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-14 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-14 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(15) {
+  background: -webkit-linear-gradient(bottom, rgba(103, 20, 255, 0.5), rgba(6, 21, 58, 0.5));
+  background: linear-gradient(bottom, rgba(103, 20, 255, 0.5), rgba(6, 21, 58, 0.5));
+  -webkit-animation: fade-15 5s linear infinite alternate;
+          animation: fade-15 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-15 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-15 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(16) {
+  background: -webkit-linear-gradient(bottom, rgba(30, 28, 255, 0.5), rgba(255, 42, 255, 0.5));
+  background: linear-gradient(bottom, rgba(30, 28, 255, 0.5), rgba(255, 42, 255, 0.5));
+  -webkit-animation: fade-16 4s linear infinite alternate;
+          animation: fade-16 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-16 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-16 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(17) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 35, 255, 0.5), rgba(255, 25, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 35, 255, 0.5), rgba(255, 25, 255, 0.5));
+  -webkit-animation: fade-17 4s linear infinite alternate;
+          animation: fade-17 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-17 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-17 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(18) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 12, 255, 0.5), rgba(12, 119, 160, 0.5));
+  background: linear-gradient(bottom, rgba(255, 12, 255, 0.5), rgba(12, 119, 160, 0.5));
+  -webkit-animation: fade-18 7s linear infinite alternate;
+          animation: fade-18 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-18 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-18 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(19) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 38, 73, 0.5), rgba(149, 130, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 38, 73, 0.5), rgba(149, 130, 255, 0.5));
+  -webkit-animation: fade-19 4s linear infinite alternate;
+          animation: fade-19 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-19 {
+  to {
+    opacity: 0.4;
+  }
+}
+@keyframes fade-19 {
+  to {
+    opacity: 0.4;
+  }
+}
+.ribbon:nth-child(20) {
+  background: -webkit-linear-gradient(bottom, rgba(133, 22, 255, 0.5), rgba(25, 80, 244, 0.5));
+  background: linear-gradient(bottom, rgba(133, 22, 255, 0.5), rgba(25, 80, 244, 0.5));
+  -webkit-animation: fade-20 1s linear infinite alternate;
+          animation: fade-20 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-20 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-20 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(21) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 49, 5, 0.5), rgba(105, 132, 130, 0.5));
+  background: linear-gradient(bottom, rgba(255, 49, 5, 0.5), rgba(105, 132, 130, 0.5));
+  -webkit-animation: fade-21 8s linear infinite alternate;
+          animation: fade-21 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-21 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-21 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(22) {
+  background: -webkit-linear-gradient(bottom, rgba(179, 42, 255, 0.5), rgba(255, 149, 255, 0.5));
+  background: linear-gradient(bottom, rgba(179, 42, 255, 0.5), rgba(255, 149, 255, 0.5));
+  -webkit-animation: fade-22 7s linear infinite alternate;
+          animation: fade-22 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-22 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-22 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(23) {
+  background: -webkit-linear-gradient(bottom, rgba(138, 41, 106, 0.5), rgba(255, 110, 255, 0.5));
+  background: linear-gradient(bottom, rgba(138, 41, 106, 0.5), rgba(255, 110, 255, 0.5));
+  -webkit-animation: fade-23 5s linear infinite alternate;
+          animation: fade-23 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-23 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-23 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(24) {
+  background: -webkit-linear-gradient(bottom, rgba(76, 22, 233, 0.5), rgba(255, 34, 255, 0.5));
+  background: linear-gradient(bottom, rgba(76, 22, 233, 0.5), rgba(255, 34, 255, 0.5));
+  -webkit-animation: fade-24 5s linear infinite alternate;
+          animation: fade-24 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-24 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-24 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(25) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 25, 209, 0.5), rgba(146, 102, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 25, 209, 0.5), rgba(146, 102, 255, 0.5));
+  -webkit-animation: fade-25 3s linear infinite alternate;
+          animation: fade-25 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-25 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-25 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(26) {
+  background: -webkit-linear-gradient(bottom, rgba(9, 16, 226, 0.5), rgba(255, 35, 255, 0.5));
+  background: linear-gradient(bottom, rgba(9, 16, 226, 0.5), rgba(255, 35, 255, 0.5));
+  -webkit-animation: fade-26 3s linear infinite alternate;
+          animation: fade-26 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-26 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-26 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(27) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 40, 243, 0.5), rgba(255, 41, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 40, 243, 0.5), rgba(255, 41, 255, 0.5));
+  -webkit-animation: fade-27 4s linear infinite alternate;
+          animation: fade-27 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-27 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-27 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(28) {
+  background: -webkit-linear-gradient(bottom, rgba(121, 11, 255, 0.5), rgba(255, 63, 77, 0.5));
+  background: linear-gradient(bottom, rgba(121, 11, 255, 0.5), rgba(255, 63, 77, 0.5));
+  -webkit-animation: fade-28 6s linear infinite alternate;
+          animation: fade-28 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-28 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-28 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(29) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 47, 255, 0.5), rgba(255, 49, 136, 0.5));
+  background: linear-gradient(bottom, rgba(255, 47, 255, 0.5), rgba(255, 49, 136, 0.5));
+  -webkit-animation: fade-29 8s linear infinite alternate;
+          animation: fade-29 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-29 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-29 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(30) {
+  background: -webkit-linear-gradient(bottom, rgba(154, 35, 199, 0.5), rgba(82, 126, 230, 0.5));
+  background: linear-gradient(bottom, rgba(154, 35, 199, 0.5), rgba(82, 126, 230, 0.5));
+  -webkit-animation: fade-30 1s linear infinite alternate;
+          animation: fade-30 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-30 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-30 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(31) {
+  background: -webkit-linear-gradient(bottom, rgba(207, 47, 200, 0.5), rgba(52, 70, 255, 0.5));
+  background: linear-gradient(bottom, rgba(207, 47, 200, 0.5), rgba(52, 70, 255, 0.5));
+  -webkit-animation: fade-31 3s linear infinite alternate;
+          animation: fade-31 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-31 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-31 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(32) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 48, 255, 0.5), rgba(6, 132, 130, 0.5));
+  background: linear-gradient(bottom, rgba(255, 48, 255, 0.5), rgba(6, 132, 130, 0.5));
+  -webkit-animation: fade-32 4s linear infinite alternate;
+          animation: fade-32 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-32 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-32 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(33) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 23, 204, 0.5), rgba(197, 78, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 23, 204, 0.5), rgba(197, 78, 255, 0.5));
+  -webkit-animation: fade-33 6s linear infinite alternate;
+          animation: fade-33 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-33 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-33 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(34) {
+  background: -webkit-linear-gradient(bottom, rgba(78, 15, 30, 0.5), rgba(255, 78, 78, 0.5));
+  background: linear-gradient(bottom, rgba(78, 15, 30, 0.5), rgba(255, 78, 78, 0.5));
+  -webkit-animation: fade-34 6s linear infinite alternate;
+          animation: fade-34 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-34 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-34 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(35) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 30, 255, 0.5), rgba(159, 82, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 30, 255, 0.5), rgba(159, 82, 255, 0.5));
+  -webkit-animation: fade-35 8s linear infinite alternate;
+          animation: fade-35 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-35 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-35 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(36) {
+  background: -webkit-linear-gradient(bottom, rgba(235, 44, 255, 0.5), rgba(161, 125, 170, 0.5));
+  background: linear-gradient(bottom, rgba(235, 44, 255, 0.5), rgba(161, 125, 170, 0.5));
+  -webkit-animation: fade-36 6s linear infinite alternate;
+          animation: fade-36 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-36 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-36 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(37) {
+  background: -webkit-linear-gradient(bottom, rgba(159, 27, 255, 0.5), rgba(255, 100, 32, 0.5));
+  background: linear-gradient(bottom, rgba(159, 27, 255, 0.5), rgba(255, 100, 32, 0.5));
+  -webkit-animation: fade-37 4s linear infinite alternate;
+          animation: fade-37 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-37 {
+  to {
+    opacity: 0.4;
+  }
+}
+@keyframes fade-37 {
+  to {
+    opacity: 0.4;
+  }
+}
+.ribbon:nth-child(38) {
+  background: -webkit-linear-gradient(bottom, rgba(84, 9, 255, 0.5), rgba(51, 121, 125, 0.5));
+  background: linear-gradient(bottom, rgba(84, 9, 255, 0.5), rgba(51, 121, 125, 0.5));
+  -webkit-animation: fade-38 7s linear infinite alternate;
+          animation: fade-38 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-38 {
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes fade-38 {
+  to {
+    opacity: 0.8;
+  }
+}
+.ribbon:nth-child(39) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 43, 195, 0.5), rgba(255, 57, 169, 0.5));
+  background: linear-gradient(bottom, rgba(255, 43, 195, 0.5), rgba(255, 57, 169, 0.5));
+  -webkit-animation: fade-39 8s linear infinite alternate;
+          animation: fade-39 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-39 {
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes fade-39 {
+  to {
+    opacity: 0.8;
+  }
+}
+.ribbon:nth-child(40) {
+  background: -webkit-linear-gradient(bottom, rgba(53, 2, 255, 0.5), rgba(200, 147, 237, 0.5));
+  background: linear-gradient(bottom, rgba(53, 2, 255, 0.5), rgba(200, 147, 237, 0.5));
+  -webkit-animation: fade-40 2s linear infinite alternate;
+          animation: fade-40 2s linear infinite alternate;
+}
+@-webkit-keyframes fade-40 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-40 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(41) {
+  background: -webkit-linear-gradient(bottom, rgba(41, 32, 237, 0.5), rgba(255, 27, 154, 0.5));
+  background: linear-gradient(bottom, rgba(41, 32, 237, 0.5), rgba(255, 27, 154, 0.5));
+  -webkit-animation: fade-41 3s linear infinite alternate;
+          animation: fade-41 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-41 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-41 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(42) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 33, 255, 0.5), rgba(62, 5, 8, 0.5));
+  background: linear-gradient(bottom, rgba(255, 33, 255, 0.5), rgba(62, 5, 8, 0.5));
+  -webkit-animation: fade-42 5s linear infinite alternate;
+          animation: fade-42 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-42 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-42 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(43) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 21, 2, 0.5), rgba(94, 54, 241, 0.5));
+  background: linear-gradient(bottom, rgba(255, 21, 2, 0.5), rgba(94, 54, 241, 0.5));
+  -webkit-animation: fade-43 5s linear infinite alternate;
+          animation: fade-43 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-43 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-43 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(44) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 23, 255, 0.5), rgba(255, 59, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 23, 255, 0.5), rgba(255, 59, 255, 0.5));
+  -webkit-animation: fade-44 6s linear infinite alternate;
+          animation: fade-44 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-44 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-44 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(45) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 17, 9, 0.5), rgba(15, 43, 239, 0.5));
+  background: linear-gradient(bottom, rgba(255, 17, 9, 0.5), rgba(15, 43, 239, 0.5));
+  -webkit-animation: fade-45 6s linear infinite alternate;
+          animation: fade-45 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-45 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-45 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(46) {
+  background: -webkit-linear-gradient(bottom, rgba(4, 36, 245, 0.5), rgba(255, 19, 247, 0.5));
+  background: linear-gradient(bottom, rgba(4, 36, 245, 0.5), rgba(255, 19, 247, 0.5));
+  -webkit-animation: fade-46 3s linear infinite alternate;
+          animation: fade-46 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-46 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-46 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(47) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 45, 42, 0.5), rgba(255, 71, 47, 0.5));
+  background: linear-gradient(bottom, rgba(255, 45, 42, 0.5), rgba(255, 71, 47, 0.5));
+  -webkit-animation: fade-47 2s linear infinite alternate;
+          animation: fade-47 2s linear infinite alternate;
+}
+@-webkit-keyframes fade-47 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-47 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(48) {
+  background: -webkit-linear-gradient(bottom, rgba(6, 30, 142, 0.5), rgba(162, 79, 93, 0.5));
+  background: linear-gradient(bottom, rgba(6, 30, 142, 0.5), rgba(162, 79, 93, 0.5));
+  -webkit-animation: fade-48 3s linear infinite alternate;
+          animation: fade-48 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-48 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-48 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(49) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 25, 87, 0.5), rgba(35, 132, 58, 0.5));
+  background: linear-gradient(bottom, rgba(255, 25, 87, 0.5), rgba(35, 132, 58, 0.5));
+  -webkit-animation: fade-49 8s linear infinite alternate;
+          animation: fade-49 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-49 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-49 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(50) {
+  background: -webkit-linear-gradient(bottom, rgba(65, 45, 255, 0.5), rgba(255, 36, 255, 0.5));
+  background: linear-gradient(bottom, rgba(65, 45, 255, 0.5), rgba(255, 36, 255, 0.5));
+  -webkit-animation: fade-50 3s linear infinite alternate;
+          animation: fade-50 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-50 {
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes fade-50 {
+  to {
+    opacity: 0.8;
+  }
+}
+.ribbon:nth-child(51) {
+  background: -webkit-linear-gradient(bottom, rgba(147, 8, 255, 0.5), rgba(255, 112, 218, 0.5));
+  background: linear-gradient(bottom, rgba(147, 8, 255, 0.5), rgba(255, 112, 218, 0.5));
+  -webkit-animation: fade-51 5s linear infinite alternate;
+          animation: fade-51 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-51 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-51 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(52) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 32, 255, 0.5), rgba(40, 138, 181, 0.5));
+  background: linear-gradient(bottom, rgba(255, 32, 255, 0.5), rgba(40, 138, 181, 0.5));
+  -webkit-animation: fade-52 4s linear infinite alternate;
+          animation: fade-52 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-52 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-52 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(53) {
+  background: -webkit-linear-gradient(bottom, rgba(59, 28, 255, 0.5), rgba(187, 3, 141, 0.5));
+  background: linear-gradient(bottom, rgba(59, 28, 255, 0.5), rgba(187, 3, 141, 0.5));
+  -webkit-animation: fade-53 1s linear infinite alternate;
+          animation: fade-53 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-53 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-53 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(54) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 13, 154, 0.5), rgba(255, 128, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 13, 154, 0.5), rgba(255, 128, 255, 0.5));
+  -webkit-animation: fade-54 3s linear infinite alternate;
+          animation: fade-54 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-54 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-54 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(55) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 50, 42, 0.5), rgba(255, 34, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 50, 42, 0.5), rgba(255, 34, 255, 0.5));
+  -webkit-animation: fade-55 5s linear infinite alternate;
+          animation: fade-55 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-55 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-55 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(56) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 31, 23, 0.5), rgba(123, 146, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 31, 23, 0.5), rgba(123, 146, 255, 0.5));
+  -webkit-animation: fade-56 1s linear infinite alternate;
+          animation: fade-56 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-56 {
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes fade-56 {
+  to {
+    opacity: 0.8;
+  }
+}
+.ribbon:nth-child(57) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 18, 255, 0.5), rgba(255, 106, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 18, 255, 0.5), rgba(255, 106, 255, 0.5));
+  -webkit-animation: fade-57 4s linear infinite alternate;
+          animation: fade-57 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-57 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-57 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(58) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 46, 235, 0.5), rgba(255, 34, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 46, 235, 0.5), rgba(255, 34, 255, 0.5));
+  -webkit-animation: fade-58 7s linear infinite alternate;
+          animation: fade-58 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-58 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-58 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(59) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 19, 255, 0.5), rgba(255, 93, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 19, 255, 0.5), rgba(255, 93, 255, 0.5));
+  -webkit-animation: fade-59 5s linear infinite alternate;
+          animation: fade-59 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-59 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-59 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(60) {
+  background: -webkit-linear-gradient(bottom, rgba(93, 44, 252, 0.5), rgba(255, 39, 139, 0.5));
+  background: linear-gradient(bottom, rgba(93, 44, 252, 0.5), rgba(255, 39, 139, 0.5));
+  -webkit-animation: fade-60 7s linear infinite alternate;
+          animation: fade-60 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-60 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-60 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(61) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 34, 255, 0.5), rgba(255, 20, 179, 0.5));
+  background: linear-gradient(bottom, rgba(255, 34, 255, 0.5), rgba(255, 20, 179, 0.5));
+  -webkit-animation: fade-61 6s linear infinite alternate;
+          animation: fade-61 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-61 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-61 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(62) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 30, 255, 0.5), rgba(255, 123, 189, 0.5));
+  background: linear-gradient(bottom, rgba(255, 30, 255, 0.5), rgba(255, 123, 189, 0.5));
+  -webkit-animation: fade-62 7s linear infinite alternate;
+          animation: fade-62 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-62 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-62 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(63) {
+  background: -webkit-linear-gradient(bottom, rgba(105, 8, 255, 0.5), rgba(65, 112, 163, 0.5));
+  background: linear-gradient(bottom, rgba(105, 8, 255, 0.5), rgba(65, 112, 163, 0.5));
+  -webkit-animation: fade-63 3s linear infinite alternate;
+          animation: fade-63 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-63 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-63 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(64) {
+  background: -webkit-linear-gradient(bottom, rgba(12, 11, 255, 0.5), rgba(255, 106, 42, 0.5));
+  background: linear-gradient(bottom, rgba(12, 11, 255, 0.5), rgba(255, 106, 42, 0.5));
+  -webkit-animation: fade-64 2s linear infinite alternate;
+          animation: fade-64 2s linear infinite alternate;
+}
+@-webkit-keyframes fade-64 {
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes fade-64 {
+  to {
+    opacity: 0.8;
+  }
+}
+.ribbon:nth-child(65) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 8, 255, 0.5), rgba(133, 150, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 8, 255, 0.5), rgba(133, 150, 255, 0.5));
+  -webkit-animation: fade-65 4s linear infinite alternate;
+          animation: fade-65 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-65 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-65 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(66) {
+  background: -webkit-linear-gradient(bottom, rgba(20, 20, 255, 0.5), rgba(255, 113, 207, 0.5));
+  background: linear-gradient(bottom, rgba(20, 20, 255, 0.5), rgba(255, 113, 207, 0.5));
+  -webkit-animation: fade-66 6s linear infinite alternate;
+          animation: fade-66 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-66 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-66 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(67) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 30, 255, 0.5), rgba(226, 122, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 30, 255, 0.5), rgba(226, 122, 255, 0.5));
+  -webkit-animation: fade-67 4s linear infinite alternate;
+          animation: fade-67 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-67 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-67 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(68) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 28, 255, 0.5), rgba(78, 97, 81, 0.5));
+  background: linear-gradient(bottom, rgba(255, 28, 255, 0.5), rgba(78, 97, 81, 0.5));
+  -webkit-animation: fade-68 1s linear infinite alternate;
+          animation: fade-68 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-68 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-68 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(69) {
+  background: -webkit-linear-gradient(bottom, rgba(98, 33, 222, 0.5), rgba(255, 139, 41, 0.5));
+  background: linear-gradient(bottom, rgba(98, 33, 222, 0.5), rgba(255, 139, 41, 0.5));
+  -webkit-animation: fade-69 7s linear infinite alternate;
+          animation: fade-69 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-69 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-69 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(70) {
+  background: -webkit-linear-gradient(bottom, rgba(243, 19, 66, 0.5), rgba(255, 57, 255, 0.5));
+  background: linear-gradient(bottom, rgba(243, 19, 66, 0.5), rgba(255, 57, 255, 0.5));
+  -webkit-animation: fade-70 6s linear infinite alternate;
+          animation: fade-70 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-70 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-70 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(71) {
+  background: -webkit-linear-gradient(bottom, rgba(191, 9, 255, 0.5), rgba(253, 1, 19, 0.5));
+  background: linear-gradient(bottom, rgba(191, 9, 255, 0.5), rgba(253, 1, 19, 0.5));
+  -webkit-animation: fade-71 4s linear infinite alternate;
+          animation: fade-71 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-71 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-71 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(72) {
+  background: -webkit-linear-gradient(bottom, rgba(170, 16, 255, 0.5), rgba(233, 130, 243, 0.5));
+  background: linear-gradient(bottom, rgba(170, 16, 255, 0.5), rgba(233, 130, 243, 0.5));
+  -webkit-animation: fade-72 2s linear infinite alternate;
+          animation: fade-72 2s linear infinite alternate;
+}
+@-webkit-keyframes fade-72 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-72 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(73) {
+  background: -webkit-linear-gradient(bottom, rgba(28, 5, 65, 0.5), rgba(255, 109, 255, 0.5));
+  background: linear-gradient(bottom, rgba(28, 5, 65, 0.5), rgba(255, 109, 255, 0.5));
+  -webkit-animation: fade-73 7s linear infinite alternate;
+          animation: fade-73 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-73 {
+  to {
+    opacity: 0.4;
+  }
+}
+@keyframes fade-73 {
+  to {
+    opacity: 0.4;
+  }
+}
+.ribbon:nth-child(74) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 28, 205, 0.5), rgba(255, 74, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 28, 205, 0.5), rgba(255, 74, 255, 0.5));
+  -webkit-animation: fade-74 8s linear infinite alternate;
+          animation: fade-74 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-74 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-74 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(75) {
+  background: -webkit-linear-gradient(bottom, rgba(163, 23, 255, 0.5), rgba(149, 64, 255, 0.5));
+  background: linear-gradient(bottom, rgba(163, 23, 255, 0.5), rgba(149, 64, 255, 0.5));
+  -webkit-animation: fade-75 6s linear infinite alternate;
+          animation: fade-75 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-75 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-75 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(76) {
+  background: -webkit-linear-gradient(bottom, rgba(87, 48, 255, 0.5), rgba(255, 119, 149, 0.5));
+  background: linear-gradient(bottom, rgba(87, 48, 255, 0.5), rgba(255, 119, 149, 0.5));
+  -webkit-animation: fade-76 1s linear infinite alternate;
+          animation: fade-76 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-76 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-76 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(77) {
+  background: -webkit-linear-gradient(bottom, rgba(209, 1, 155, 0.5), rgba(255, 10, 75, 0.5));
+  background: linear-gradient(bottom, rgba(209, 1, 155, 0.5), rgba(255, 10, 75, 0.5));
+  -webkit-animation: fade-77 5s linear infinite alternate;
+          animation: fade-77 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-77 {
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes fade-77 {
+  to {
+    opacity: 0.8;
+  }
+}
+.ribbon:nth-child(78) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 11, 233, 0.5), rgba(255, 49, 19, 0.5));
+  background: linear-gradient(bottom, rgba(255, 11, 233, 0.5), rgba(255, 49, 19, 0.5));
+  -webkit-animation: fade-78 7s linear infinite alternate;
+          animation: fade-78 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-78 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-78 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(79) {
+  background: -webkit-linear-gradient(bottom, rgba(161, 33, 255, 0.5), rgba(255, 45, 255, 0.5));
+  background: linear-gradient(bottom, rgba(161, 33, 255, 0.5), rgba(255, 45, 255, 0.5));
+  -webkit-animation: fade-79 3s linear infinite alternate;
+          animation: fade-79 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-79 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-79 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(80) {
+  background: -webkit-linear-gradient(bottom, rgba(220, 50, 154, 0.5), rgba(255, 31, 185, 0.5));
+  background: linear-gradient(bottom, rgba(220, 50, 154, 0.5), rgba(255, 31, 185, 0.5));
+  -webkit-animation: fade-80 8s linear infinite alternate;
+          animation: fade-80 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-80 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-80 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(81) {
+  background: -webkit-linear-gradient(bottom, rgba(194, 43, 255, 0.5), rgba(255, 10, 255, 0.5));
+  background: linear-gradient(bottom, rgba(194, 43, 255, 0.5), rgba(255, 10, 255, 0.5));
+  -webkit-animation: fade-81 6s linear infinite alternate;
+          animation: fade-81 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-81 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-81 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(82) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 28, 255, 0.5), rgba(247, 133, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 28, 255, 0.5), rgba(247, 133, 255, 0.5));
+  -webkit-animation: fade-82 7s linear infinite alternate;
+          animation: fade-82 7s linear infinite alternate;
+}
+@-webkit-keyframes fade-82 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-82 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(83) {
+  background: -webkit-linear-gradient(bottom, rgba(146, 40, 216, 0.5), rgba(255, 22, 221, 0.5));
+  background: linear-gradient(bottom, rgba(146, 40, 216, 0.5), rgba(255, 22, 221, 0.5));
+  -webkit-animation: fade-83 5s linear infinite alternate;
+          animation: fade-83 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-83 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-83 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(84) {
+  background: -webkit-linear-gradient(bottom, rgba(60, 31, 17, 0.5), rgba(50, 34, 255, 0.5));
+  background: linear-gradient(bottom, rgba(60, 31, 17, 0.5), rgba(50, 34, 255, 0.5));
+  -webkit-animation: fade-84 8s linear infinite alternate;
+          animation: fade-84 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-84 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-84 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(85) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 19, 251, 0.5), rgba(255, 125, 190, 0.5));
+  background: linear-gradient(bottom, rgba(255, 19, 251, 0.5), rgba(255, 125, 190, 0.5));
+  -webkit-animation: fade-85 8s linear infinite alternate;
+          animation: fade-85 8s linear infinite alternate;
+}
+@-webkit-keyframes fade-85 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-85 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(86) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 27, 255, 0.5), rgba(255, 51, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 27, 255, 0.5), rgba(255, 51, 255, 0.5));
+  -webkit-animation: fade-86 6s linear infinite alternate;
+          animation: fade-86 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-86 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-86 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(87) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 48, 133, 0.5), rgba(59, 118, 34, 0.5));
+  background: linear-gradient(bottom, rgba(255, 48, 133, 0.5), rgba(59, 118, 34, 0.5));
+  -webkit-animation: fade-87 5s linear infinite alternate;
+          animation: fade-87 5s linear infinite alternate;
+}
+@-webkit-keyframes fade-87 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-87 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(88) {
+  background: -webkit-linear-gradient(bottom, rgba(85, 4, 255, 0.5), rgba(246, 79, 46, 0.5));
+  background: linear-gradient(bottom, rgba(85, 4, 255, 0.5), rgba(246, 79, 46, 0.5));
+  -webkit-animation: fade-88 4s linear infinite alternate;
+          animation: fade-88 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-88 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-88 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(89) {
+  background: -webkit-linear-gradient(bottom, rgba(178, 18, 255, 0.5), rgba(16, 73, 255, 0.5));
+  background: linear-gradient(bottom, rgba(178, 18, 255, 0.5), rgba(16, 73, 255, 0.5));
+  -webkit-animation: fade-89 2s linear infinite alternate;
+          animation: fade-89 2s linear infinite alternate;
+}
+@-webkit-keyframes fade-89 {
+  to {
+    opacity: 0.1;
+  }
+}
+@keyframes fade-89 {
+  to {
+    opacity: 0.1;
+  }
+}
+.ribbon:nth-child(90) {
+  background: -webkit-linear-gradient(bottom, rgba(226, 43, 35, 0.5), rgba(255, 150, 255, 0.5));
+  background: linear-gradient(bottom, rgba(226, 43, 35, 0.5), rgba(255, 150, 255, 0.5));
+  -webkit-animation: fade-90 6s linear infinite alternate;
+          animation: fade-90 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-90 {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes fade-90 {
+  to {
+    opacity: 0.5;
+  }
+}
+.ribbon:nth-child(91) {
+  background: -webkit-linear-gradient(bottom, rgba(10, 36, 255, 0.5), rgba(255, 47, 158, 0.5));
+  background: linear-gradient(bottom, rgba(10, 36, 255, 0.5), rgba(255, 47, 158, 0.5));
+  -webkit-animation: fade-91 1s linear infinite alternate;
+          animation: fade-91 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-91 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-91 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(92) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 16, 41, 0.5), rgba(255, 103, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 16, 41, 0.5), rgba(255, 103, 255, 0.5));
+  -webkit-animation: fade-92 3s linear infinite alternate;
+          animation: fade-92 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-92 {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-92 {
+  to {
+    opacity: 0.7;
+  }
+}
+.ribbon:nth-child(93) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 5, 255, 0.5), rgba(255, 37, 71, 0.5));
+  background: linear-gradient(bottom, rgba(255, 5, 255, 0.5), rgba(255, 37, 71, 0.5));
+  -webkit-animation: fade-93 1s linear infinite alternate;
+          animation: fade-93 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-93 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-93 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(94) {
+  background: -webkit-linear-gradient(bottom, rgba(251, 29, 43, 0.5), rgba(157, 67, 255, 0.5));
+  background: linear-gradient(bottom, rgba(251, 29, 43, 0.5), rgba(157, 67, 255, 0.5));
+  -webkit-animation: fade-94 6s linear infinite alternate;
+          animation: fade-94 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-94 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-94 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(95) {
+  background: -webkit-linear-gradient(bottom, rgba(99, 44, 255, 0.5), rgba(178, 92, 55, 0.5));
+  background: linear-gradient(bottom, rgba(99, 44, 255, 0.5), rgba(178, 92, 55, 0.5));
+  -webkit-animation: fade-95 1s linear infinite alternate;
+          animation: fade-95 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-95 {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes fade-95 {
+  to {
+    opacity: 0.2;
+  }
+}
+.ribbon:nth-child(96) {
+  background: -webkit-linear-gradient(bottom, rgba(180, 49, 130, 0.5), rgba(49, 71, 113, 0.5));
+  background: linear-gradient(bottom, rgba(180, 49, 130, 0.5), rgba(49, 71, 113, 0.5));
+  -webkit-animation: fade-96 4s linear infinite alternate;
+          animation: fade-96 4s linear infinite alternate;
+}
+@-webkit-keyframes fade-96 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-96 {
+  to {
+    opacity: 1;
+  }
+}
+.ribbon:nth-child(97) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 37, 145, 0.5), rgba(255, 130, 44, 0.5));
+  background: linear-gradient(bottom, rgba(255, 37, 145, 0.5), rgba(255, 130, 44, 0.5));
+  -webkit-animation: fade-97 1s linear infinite alternate;
+          animation: fade-97 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-97 {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fade-97 {
+  to {
+    opacity: 0.6;
+  }
+}
+.ribbon:nth-child(98) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 50, 255, 0.5), rgba(255, 66, 237, 0.5));
+  background: linear-gradient(bottom, rgba(255, 50, 255, 0.5), rgba(255, 66, 237, 0.5));
+  -webkit-animation: fade-98 1s linear infinite alternate;
+          animation: fade-98 1s linear infinite alternate;
+}
+@-webkit-keyframes fade-98 {
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade-98 {
+  to {
+    opacity: 0.9;
+  }
+}
+.ribbon:nth-child(99) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 30, 112, 0.5), rgba(255, 118, 255, 0.5));
+  background: linear-gradient(bottom, rgba(255, 30, 112, 0.5), rgba(255, 118, 255, 0.5));
+  -webkit-animation: fade-99 6s linear infinite alternate;
+          animation: fade-99 6s linear infinite alternate;
+}
+@-webkit-keyframes fade-99 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-99 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon:nth-child(100) {
+  background: -webkit-linear-gradient(bottom, rgba(255, 22, 255, 0.5), rgba(255, 98, 166, 0.5));
+  background: linear-gradient(bottom, rgba(255, 22, 255, 0.5), rgba(255, 98, 166, 0.5));
+  -webkit-animation: fade-100 3s linear infinite alternate;
+          animation: fade-100 3s linear infinite alternate;
+}
+@-webkit-keyframes fade-100 {
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-100 {
+  to {
+    opacity: 0.3;
+  }
+}
+.ribbon-alt {
+  width: 100%;
+  height: 3.34%;
+  float: left;
+  display: block;
+}
+.ribbon-alt:nth-child(1) {
+  background: -webkit-linear-gradient(right, rgba(157, 141, 215, 0.5), rgba(110, 3, 103, 0.5));
+  background: linear-gradient(right, rgba(157, 141, 215, 0.5), rgba(110, 3, 103, 0.5));
+  -webkit-animation: shift-1 30s linear infinite alternate;
+          animation: shift-1 30s linear infinite alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes shift-1 {
+  to {
+    -webkit-transform: translateX(-94%);
+            transform: translateX(-94%);
+  }
+}
+@keyframes shift-1 {
+  to {
+    -webkit-transform: translateX(-94%);
+            transform: translateX(-94%);
+  }
+}
+.ribbon-alt:nth-child(2) {
+  background: -webkit-linear-gradient(right, rgba(126, 25, 89, 0.5), rgba(82, 22, 70, 0.5));
+  background: linear-gradient(right, rgba(126, 25, 89, 0.5), rgba(82, 22, 70, 0.5));
+  -webkit-animation: shift-2 10s linear infinite alternate;
+          animation: shift-2 10s linear infinite alternate;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+@-webkit-keyframes shift-2 {
+  to {
+    -webkit-transform: translateX(-77%);
+            transform: translateX(-77%);
+  }
+}
+@keyframes shift-2 {
+  to {
+    -webkit-transform: translateX(-77%);
+            transform: translateX(-77%);
+  }
+}
+.ribbon-alt:nth-child(3) {
+  background: -webkit-linear-gradient(right, rgba(170, 62, 73, 0.5), rgba(78, 26, 98, 0.5));
+  background: linear-gradient(right, rgba(170, 62, 73, 0.5), rgba(78, 26, 98, 0.5));
+  -webkit-animation: shift-3 12s linear infinite alternate;
+          animation: shift-3 12s linear infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes shift-3 {
+  to {
+    -webkit-transform: translateX(90%);
+            transform: translateX(90%);
+  }
+}
+@keyframes shift-3 {
+  to {
+    -webkit-transform: translateX(90%);
+            transform: translateX(90%);
+  }
+}
+.ribbon-alt:nth-child(4) {
+  background: -webkit-linear-gradient(right, rgba(22, 149, 141, 0.5), rgba(255, 27, 88, 0.5));
+  background: linear-gradient(right, rgba(22, 149, 141, 0.5), rgba(255, 27, 88, 0.5));
+  -webkit-animation: shift-4 8s linear infinite alternate;
+          animation: shift-4 8s linear infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes shift-4 {
+  to {
+    -webkit-transform: translateX(36%);
+            transform: translateX(36%);
+  }
+}
+@keyframes shift-4 {
+  to {
+    -webkit-transform: translateX(36%);
+            transform: translateX(36%);
+  }
+}
+.ribbon-alt:nth-child(5) {
+  background: -webkit-linear-gradient(right, rgba(96, 48, 255, 0.5), rgba(255, 34, 5, 0.5));
+  background: linear-gradient(right, rgba(96, 48, 255, 0.5), rgba(255, 34, 5, 0.5));
+  -webkit-animation: shift-5 35s linear infinite alternate;
+          animation: shift-5 35s linear infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes shift-5 {
+  to {
+    -webkit-transform: translateX(86%);
+            transform: translateX(86%);
+  }
+}
+@keyframes shift-5 {
+  to {
+    -webkit-transform: translateX(86%);
+            transform: translateX(86%);
+  }
+}
+.ribbon-alt:nth-child(6) {
+  background: -webkit-linear-gradient(right, rgba(33, 124, 96, 0.5), rgba(225, 57, 95, 0.5));
+  background: linear-gradient(right, rgba(33, 124, 96, 0.5), rgba(225, 57, 95, 0.5));
+  -webkit-animation: shift-6 30s linear infinite alternate;
+          animation: shift-6 30s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-6 {
+  to {
+    -webkit-transform: translateX(-83%);
+            transform: translateX(-83%);
+  }
+}
+@keyframes shift-6 {
+  to {
+    -webkit-transform: translateX(-83%);
+            transform: translateX(-83%);
+  }
+}
+.ribbon-alt:nth-child(7) {
+  background: -webkit-linear-gradient(right, rgba(33, 124, 255, 0.5), rgba(255, 92, 191, 0.5));
+  background: linear-gradient(right, rgba(33, 124, 255, 0.5), rgba(255, 92, 191, 0.5));
+  -webkit-animation: shift-7 38s linear infinite alternate;
+          animation: shift-7 38s linear infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes shift-7 {
+  to {
+    -webkit-transform: translateX(-73%);
+            transform: translateX(-73%);
+  }
+}
+@keyframes shift-7 {
+  to {
+    -webkit-transform: translateX(-73%);
+            transform: translateX(-73%);
+  }
+}
+.ribbon-alt:nth-child(8) {
+  background: -webkit-linear-gradient(right, rgba(114, 131, 210, 0.5), rgba(116, 48, 31, 0.5));
+  background: linear-gradient(right, rgba(114, 131, 210, 0.5), rgba(116, 48, 31, 0.5));
+  -webkit-animation: shift-8 27s linear infinite alternate;
+          animation: shift-8 27s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-8 {
+  to {
+    -webkit-transform: translateX(74%);
+            transform: translateX(74%);
+  }
+}
+@keyframes shift-8 {
+  to {
+    -webkit-transform: translateX(74%);
+            transform: translateX(74%);
+  }
+}
+.ribbon-alt:nth-child(9) {
+  background: -webkit-linear-gradient(right, rgba(132, 96, 255, 0.5), rgba(255, 9, 58, 0.5));
+  background: linear-gradient(right, rgba(132, 96, 255, 0.5), rgba(255, 9, 58, 0.5));
+  -webkit-animation: shift-9 30s linear infinite alternate;
+          animation: shift-9 30s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-9 {
+  to {
+    -webkit-transform: translateX(59%);
+            transform: translateX(59%);
+  }
+}
+@keyframes shift-9 {
+  to {
+    -webkit-transform: translateX(59%);
+            transform: translateX(59%);
+  }
+}
+.ribbon-alt:nth-child(10) {
+  background: -webkit-linear-gradient(right, rgba(114, 73, 191, 0.5), rgba(255, 19, 139, 0.5));
+  background: linear-gradient(right, rgba(114, 73, 191, 0.5), rgba(255, 19, 139, 0.5));
+  -webkit-animation: shift-10 7s linear infinite alternate;
+          animation: shift-10 7s linear infinite alternate;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+@-webkit-keyframes shift-10 {
+  to {
+    -webkit-transform: translateX(-83%);
+            transform: translateX(-83%);
+  }
+}
+@keyframes shift-10 {
+  to {
+    -webkit-transform: translateX(-83%);
+            transform: translateX(-83%);
+  }
+}
+.ribbon-alt:nth-child(11) {
+  background: -webkit-linear-gradient(right, rgba(186, 27, 255, 0.5), rgba(185, 74, 12, 0.5));
+  background: linear-gradient(right, rgba(186, 27, 255, 0.5), rgba(185, 74, 12, 0.5));
+  -webkit-animation: shift-11 38s linear infinite alternate;
+          animation: shift-11 38s linear infinite alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes shift-11 {
+  to {
+    -webkit-transform: translateX(57%);
+            transform: translateX(57%);
+  }
+}
+@keyframes shift-11 {
+  to {
+    -webkit-transform: translateX(57%);
+            transform: translateX(57%);
+  }
+}
+.ribbon-alt:nth-child(12) {
+  background: -webkit-linear-gradient(right, rgba(71, 89, 213, 0.5), rgba(8, 24, 50, 0.5));
+  background: linear-gradient(right, rgba(71, 89, 213, 0.5), rgba(8, 24, 50, 0.5));
+  -webkit-animation: shift-12 4s linear infinite alternate;
+          animation: shift-12 4s linear infinite alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes shift-12 {
+  to {
+    -webkit-transform: translateX(-17%);
+            transform: translateX(-17%);
+  }
+}
+@keyframes shift-12 {
+  to {
+    -webkit-transform: translateX(-17%);
+            transform: translateX(-17%);
+  }
+}
+.ribbon-alt:nth-child(13) {
+  background: -webkit-linear-gradient(right, rgba(119, 35, 255, 0.5), rgba(255, 25, 198, 0.5));
+  background: linear-gradient(right, rgba(119, 35, 255, 0.5), rgba(255, 25, 198, 0.5));
+  -webkit-animation: shift-13 15s linear infinite alternate;
+          animation: shift-13 15s linear infinite alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes shift-13 {
+  to {
+    -webkit-transform: translateX(78%);
+            transform: translateX(78%);
+  }
+}
+@keyframes shift-13 {
+  to {
+    -webkit-transform: translateX(78%);
+            transform: translateX(78%);
+  }
+}
+.ribbon-alt:nth-child(14) {
+  background: -webkit-linear-gradient(right, rgba(15, 110, 97, 0.5), rgba(248, 42, 3, 0.5));
+  background: linear-gradient(right, rgba(15, 110, 97, 0.5), rgba(248, 42, 3, 0.5));
+  -webkit-animation: shift-14 16s linear infinite alternate;
+          animation: shift-14 16s linear infinite alternate;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+@-webkit-keyframes shift-14 {
+  to {
+    -webkit-transform: translateX(17%);
+            transform: translateX(17%);
+  }
+}
+@keyframes shift-14 {
+  to {
+    -webkit-transform: translateX(17%);
+            transform: translateX(17%);
+  }
+}
+.ribbon-alt:nth-child(15) {
+  background: -webkit-linear-gradient(right, rgba(161, 26, 255, 0.5), rgba(255, 27, 4, 0.5));
+  background: linear-gradient(right, rgba(161, 26, 255, 0.5), rgba(255, 27, 4, 0.5));
+  -webkit-animation: shift-15 12s linear infinite alternate;
+          animation: shift-15 12s linear infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes shift-15 {
+  to {
+    -webkit-transform: translateX(15%);
+            transform: translateX(15%);
+  }
+}
+@keyframes shift-15 {
+  to {
+    -webkit-transform: translateX(15%);
+            transform: translateX(15%);
+  }
+}
+.ribbon-alt:nth-child(16) {
+  background: -webkit-linear-gradient(right, rgba(162, 61, 255, 0.5), rgba(255, 29, 166, 0.5));
+  background: linear-gradient(right, rgba(162, 61, 255, 0.5), rgba(255, 29, 166, 0.5));
+  -webkit-animation: shift-16 40s linear infinite alternate;
+          animation: shift-16 40s linear infinite alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes shift-16 {
+  to {
+    -webkit-transform: translateX(-7%);
+            transform: translateX(-7%);
+  }
+}
+@keyframes shift-16 {
+  to {
+    -webkit-transform: translateX(-7%);
+            transform: translateX(-7%);
+  }
+}
+.ribbon-alt:nth-child(17) {
+  background: -webkit-linear-gradient(right, rgba(67, 69, 255, 0.5), rgba(255, 57, 15, 0.5));
+  background: linear-gradient(right, rgba(67, 69, 255, 0.5), rgba(255, 57, 15, 0.5));
+  -webkit-animation: shift-17 31s linear infinite alternate;
+          animation: shift-17 31s linear infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes shift-17 {
+  to {
+    -webkit-transform: translateX(11%);
+            transform: translateX(11%);
+  }
+}
+@keyframes shift-17 {
+  to {
+    -webkit-transform: translateX(11%);
+            transform: translateX(11%);
+  }
+}
+.ribbon-alt:nth-child(18) {
+  background: -webkit-linear-gradient(right, rgba(106, 136, 193, 0.5), rgba(255, 79, 197, 0.5));
+  background: linear-gradient(right, rgba(106, 136, 193, 0.5), rgba(255, 79, 197, 0.5));
+  -webkit-animation: shift-18 13s linear infinite alternate;
+          animation: shift-18 13s linear infinite alternate;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+@-webkit-keyframes shift-18 {
+  to {
+    -webkit-transform: translateX(19%);
+            transform: translateX(19%);
+  }
+}
+@keyframes shift-18 {
+  to {
+    -webkit-transform: translateX(19%);
+            transform: translateX(19%);
+  }
+}
+.ribbon-alt:nth-child(19) {
+  background: -webkit-linear-gradient(right, rgba(131, 123, 118, 0.5), rgba(251, 96, 60, 0.5));
+  background: linear-gradient(right, rgba(131, 123, 118, 0.5), rgba(251, 96, 60, 0.5));
+  -webkit-animation: shift-19 5s linear infinite alternate;
+          animation: shift-19 5s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-19 {
+  to {
+    -webkit-transform: translateX(-88%);
+            transform: translateX(-88%);
+  }
+}
+@keyframes shift-19 {
+  to {
+    -webkit-transform: translateX(-88%);
+            transform: translateX(-88%);
+  }
+}
+.ribbon-alt:nth-child(20) {
+  background: -webkit-linear-gradient(right, rgba(121, 13, 255, 0.5), rgba(255, 83, 120, 0.5));
+  background: linear-gradient(right, rgba(121, 13, 255, 0.5), rgba(255, 83, 120, 0.5));
+  -webkit-animation: shift-20 36s linear infinite alternate;
+          animation: shift-20 36s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-20 {
+  to {
+    -webkit-transform: translateX(-72%);
+            transform: translateX(-72%);
+  }
+}
+@keyframes shift-20 {
+  to {
+    -webkit-transform: translateX(-72%);
+            transform: translateX(-72%);
+  }
+}
+.ribbon-alt:nth-child(21) {
+  background: -webkit-linear-gradient(right, rgba(145, 83, 122, 0.5), rgba(255, 58, 79, 0.5));
+  background: linear-gradient(right, rgba(145, 83, 122, 0.5), rgba(255, 58, 79, 0.5));
+  -webkit-animation: shift-21 36s linear infinite alternate;
+          animation: shift-21 36s linear infinite alternate;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+@-webkit-keyframes shift-21 {
+  to {
+    -webkit-transform: translateX(-87%);
+            transform: translateX(-87%);
+  }
+}
+@keyframes shift-21 {
+  to {
+    -webkit-transform: translateX(-87%);
+            transform: translateX(-87%);
+  }
+}
+.ribbon-alt:nth-child(22) {
+  background: -webkit-linear-gradient(right, rgba(79, 143, 92, 0.5), rgba(255, 1, 67, 0.5));
+  background: linear-gradient(right, rgba(79, 143, 92, 0.5), rgba(255, 1, 67, 0.5));
+  -webkit-animation: shift-22 5s linear infinite alternate;
+          animation: shift-22 5s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-22 {
+  to {
+    -webkit-transform: translateX(83%);
+            transform: translateX(83%);
+  }
+}
+@keyframes shift-22 {
+  to {
+    -webkit-transform: translateX(83%);
+            transform: translateX(83%);
+  }
+}
+.ribbon-alt:nth-child(23) {
+  background: -webkit-linear-gradient(right, rgba(149, 116, 255, 0.5), rgba(255, 9, 78, 0.5));
+  background: linear-gradient(right, rgba(149, 116, 255, 0.5), rgba(255, 9, 78, 0.5));
+  -webkit-animation: shift-23 23s linear infinite alternate;
+          animation: shift-23 23s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-23 {
+  to {
+    -webkit-transform: translateX(-56%);
+            transform: translateX(-56%);
+  }
+}
+@keyframes shift-23 {
+  to {
+    -webkit-transform: translateX(-56%);
+            transform: translateX(-56%);
+  }
+}
+.ribbon-alt:nth-child(24) {
+  background: -webkit-linear-gradient(right, rgba(27, 100, 215, 0.5), rgba(255, 14, 48, 0.5));
+  background: linear-gradient(right, rgba(27, 100, 215, 0.5), rgba(255, 14, 48, 0.5));
+  -webkit-animation: shift-24 23s linear infinite alternate;
+          animation: shift-24 23s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-24 {
+  to {
+    -webkit-transform: translateX(-46%);
+            transform: translateX(-46%);
+  }
+}
+@keyframes shift-24 {
+  to {
+    -webkit-transform: translateX(-46%);
+            transform: translateX(-46%);
+  }
+}
+.ribbon-alt:nth-child(25) {
+  background: -webkit-linear-gradient(right, rgba(63, 63, 255, 0.5), rgba(11, 22, 192, 0.5));
+  background: linear-gradient(right, rgba(63, 63, 255, 0.5), rgba(11, 22, 192, 0.5));
+  -webkit-animation: shift-25 35s linear infinite alternate;
+          animation: shift-25 35s linear infinite alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes shift-25 {
+  to {
+    -webkit-transform: translateX(91%);
+            transform: translateX(91%);
+  }
+}
+@keyframes shift-25 {
+  to {
+    -webkit-transform: translateX(91%);
+            transform: translateX(91%);
+  }
+}
+.ribbon-alt:nth-child(26) {
+  background: -webkit-linear-gradient(right, rgba(33, 3, 255, 0.5), rgba(255, 51, 49, 0.5));
+  background: linear-gradient(right, rgba(33, 3, 255, 0.5), rgba(255, 51, 49, 0.5));
+  -webkit-animation: shift-26 3s linear infinite alternate;
+          animation: shift-26 3s linear infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes shift-26 {
+  to {
+    -webkit-transform: translateX(-23%);
+            transform: translateX(-23%);
+  }
+}
+@keyframes shift-26 {
+  to {
+    -webkit-transform: translateX(-23%);
+            transform: translateX(-23%);
+  }
+}
+.ribbon-alt:nth-child(27) {
+  background: -webkit-linear-gradient(right, rgba(168, 87, 255, 0.5), rgba(12, 97, 181, 0.5));
+  background: linear-gradient(right, rgba(168, 87, 255, 0.5), rgba(12, 97, 181, 0.5));
+  -webkit-animation: shift-27 9s linear infinite alternate;
+          animation: shift-27 9s linear infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes shift-27 {
+  to {
+    -webkit-transform: translateX(74%);
+            transform: translateX(74%);
+  }
+}
+@keyframes shift-27 {
+  to {
+    -webkit-transform: translateX(74%);
+            transform: translateX(74%);
+  }
+}
+.ribbon-alt:nth-child(28) {
+  background: -webkit-linear-gradient(right, rgba(166, 50, 198, 0.5), rgba(108, 81, 125, 0.5));
+  background: linear-gradient(right, rgba(166, 50, 198, 0.5), rgba(108, 81, 125, 0.5));
+  -webkit-animation: shift-28 14s linear infinite alternate;
+          animation: shift-28 14s linear infinite alternate;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+@-webkit-keyframes shift-28 {
+  to {
+    -webkit-transform: translateX(-47%);
+            transform: translateX(-47%);
+  }
+}
+@keyframes shift-28 {
+  to {
+    -webkit-transform: translateX(-47%);
+            transform: translateX(-47%);
+  }
+}
+.ribbon-alt:nth-child(29) {
+  background: -webkit-linear-gradient(right, rgba(85, 126, 20, 0.5), rgba(255, 74, 24, 0.5));
+  background: linear-gradient(right, rgba(85, 126, 20, 0.5), rgba(255, 74, 24, 0.5));
+  -webkit-animation: shift-29 16s linear infinite alternate;
+          animation: shift-29 16s linear infinite alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes shift-29 {
+  to {
+    -webkit-transform: translateX(-14%);
+            transform: translateX(-14%);
+  }
+}
+@keyframes shift-29 {
+  to {
+    -webkit-transform: translateX(-14%);
+            transform: translateX(-14%);
+  }
+}
+.ribbon-alt:nth-child(30) {
+  background: -webkit-linear-gradient(right, rgba(155, 78, 41, 0.5), rgba(114, 19, 56, 0.5));
+  background: linear-gradient(right, rgba(155, 78, 41, 0.5), rgba(114, 19, 56, 0.5));
+  -webkit-animation: shift-30 9s linear infinite alternate;
+          animation: shift-30 9s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-30 {
+  to {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+}
+@keyframes shift-30 {
+  to {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+}
+.ribbon-alt:nth-child(31) {
+  background: -webkit-linear-gradient(right, rgba(189, 117, 8, 0.5), rgba(209, 6, 186, 0.5));
+  background: linear-gradient(right, rgba(189, 117, 8, 0.5), rgba(209, 6, 186, 0.5));
+  -webkit-animation: shift-31 28s linear infinite alternate;
+          animation: shift-31 28s linear infinite alternate;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+@-webkit-keyframes shift-31 {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+@keyframes shift-31 {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+.ribbon-alt:nth-child(32) {
+  background: -webkit-linear-gradient(right, rgba(57, 45, 255, 0.5), rgba(58, 94, 93, 0.5));
+  background: linear-gradient(right, rgba(57, 45, 255, 0.5), rgba(58, 94, 93, 0.5));
+  -webkit-animation: shift-32 4s linear infinite alternate;
+          animation: shift-32 4s linear infinite alternate;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes shift-32 {
+  to {
+    -webkit-transform: translateX(-75%);
+            transform: translateX(-75%);
+  }
+}
+@keyframes shift-32 {
+  to {
+    -webkit-transform: translateX(-75%);
+            transform: translateX(-75%);
+  }
+}
+.ribbon-alt:nth-child(33) {
+  background: -webkit-linear-gradient(right, rgba(168, 83, 201, 0.5), rgba(140, 23, 59, 0.5));
+  background: linear-gradient(right, rgba(168, 83, 201, 0.5), rgba(140, 23, 59, 0.5));
+  -webkit-animation: shift-33 29s linear infinite alternate;
+          animation: shift-33 29s linear infinite alternate;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+@-webkit-keyframes shift-33 {
+  to {
+    -webkit-transform: translateX(-16%);
+            transform: translateX(-16%);
+  }
+}
+@keyframes shift-33 {
+  to {
+    -webkit-transform: translateX(-16%);
+            transform: translateX(-16%);
+  }
+}
+</style></head><body>
+<div class='vert'>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+  <div class='ribbon'></div>
+</div>
+<div class='horiz'>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+  <div class='ribbon-alt'></div>
+</div>
+
+</body></html>

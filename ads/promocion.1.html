@@ -1,0 +1,206 @@
+
+<!DOCTYPE html><html class=''>
+<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/MichaelArestad/pen/eJdra" />
+
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'><script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+<style class="cp-pen-styles">html,
+body {
+  background: #f4f4f4;
+}
+
+.dvlpdnvr {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px;
+  padding: 158px 0 0 0;
+}
+.dvlpdnvr h1,
+.dvlpdnvr h2 {
+  position: relative;
+  width: 222px;
+  margin: 0 auto;
+  text-align: center;
+  color: #6e120f;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+.dvlpdnvr h1 {
+  font-size: 19px;
+  text-transform: uppercase;
+  border-top: 1px solid #972d29;
+  padding-top: 18px;
+}
+.dvlpdnvr h2 {
+  width: 202px;
+  padding-bottom: 10px;
+  font-size: 62px;
+  border-bottom: 1px solid #972d29;
+  letter-spacing: 15px;
+  text-indent: 10px;
+}
+
+.shield {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+
+.shield-bg {
+  fill: #bd3735;
+}
+
+.shield-border {
+  fill: #901f20;
+}
+
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 108px;
+  width: 80px;
+  height: 70px;
+  font-size: 17px;
+  color: #561717;
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.logo div {
+  position: absolute;
+}
+.logo:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 84px;
+  height: 1px;
+  background: #561717;
+  box-shadow: -1px 4px 3px rgba(0, 0, 0, 0.2);
+  transform: rotate(-45deg) translate(-2px, -1px);
+}
+.logo:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 84px;
+  height: 1px;
+  background: #561717;
+  box-shadow: 4px 1px 3px rgba(0, 0, 0, 0.2);
+  transform: rotate(45deg) translate(-1px, 2px);
+}
+
+.d {
+  top: 26px;
+  left: 9px;
+}
+
+.v {
+  top: 26px;
+  left: 58px;
+}
+
+.l {
+  top: 4px;
+  left: 34px;
+}
+
+.p {
+  bottom: 1px;
+  left: 34px;
+}
+
+.ribbon {
+  width: 160px;
+  height: 121px;
+  position: absolute;
+  top: 0;
+  left: 1px;
+  overflow: hidden;
+  transform: rotate(-7deg);
+}
+
+.mask {
+  width: 160px;
+  height: 121px;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  overflow: hidden;
+  transform: rotate(7deg);
+}
+
+.tickets {
+  box-sizing: border-box;
+  position: relative;
+  padding: 11px 0 11px 21px;
+  top: 27px;
+  left: -36px;
+  width: 173px;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: left;
+  transform-origin: center top;
+  transform: rotate(-40deg);
+  background-color: #4bcae1;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.tickets:before,
+.tickets:after {
+  content: "";
+  border-top: 3px solid #6e8900;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  position: absolute;
+  bottom: -3px;
+}
+
+.tickets:before {
+  left: 0;
+}
+
+.tickets:after {
+  right: 0;
+}
+
+.header {
+  content: "";
+  height: 340px;
+  background: url(http://developdenver.org/images/header_background.jpg) center center no-repeat;
+  background-size: cover;
+  border-bottom: 5px solid #dce2e5;
+}
+</style></head><body>
+<script type="text/javascript" src="//use.typekit.net/dsj1dpv.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<div class="header"></div>
+
+<div class="dvlpdnvr">
+  <svg class="shield" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="299px" height="334.571px" viewBox="0 0 299 334.571" enable-background="new 0 0 299 334.571" xml:space="preserve">
+  <g>
+    <polygon class="shield-bg" fill="#231F20" points="31.176,298.203 4.381,4 294.619,4 267.824,298.203 149.5,330.426 	"/>
+    <path class="shield-border" fill="#808285" d="M290.238,8l-26.146,287.074L149.5,326.28L34.907,295.074L8.762,8H149.5H290.238 M299,0H149.5H0
+      l27.444,301.333L149.5,334.571l122.056-33.238L299,0L299,0z"/>
+  </g>
+  </svg>
+  <div class="logo">
+    <div class="d">D</div>
+    <div class="l">L</div>
+    <div class="v">V</div>
+    <div class="p">P</div>
+  </div>
+  <h1>Develop Denver</h1>
+  <h2>2013</h2>
+  <div class="ribbon">
+    <div class="mask">
+      <div class="tickets">Tickets on sale</div>
+    </div>
+  </div>
+</div>
+
+</body></html>

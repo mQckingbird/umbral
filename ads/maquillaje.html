@@ -1,0 +1,578 @@
+
+<!DOCTYPE html><html class=''>
+<head>
+
+
+<style class="cp-pen-styles">
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important;
+  width: 100%;
+  height: 100%;
+  cursor: none;
+}
+
+.title {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: "Montserrat";
+  text-align: center;
+  width: 100%;
+}
+.title h1 {
+  position: relative;
+  color: #ec0a0a;
+  font-weight: 600;
+  font-size: 60px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 0 30px #000155;
+}
+.title h1 span {
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  color: #BBB;
+}
+.title h3 {
+  font-weight: 200;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  color: #570404;
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px #000155;
+}
+
+
+ul.ribbon-badge{
+    padding:0;
+    margin:0px auto;
+    width:245px;
+    height:245px;
+    border-radius:50%;
+    position:fixed;
+    right:20px;
+    box-shadow:
+        0 0 25px 0 black,
+        0 0 25px 0 #000 inset;
+}
+ul.ribbon-badge  li{
+    z-index:0;
+    display:inline-block;
+    background:#3875ff;
+    width:250px;
+    height:35px;
+    left:-3px;
+    top:105px;
+    position:absolute;
+}
+
+
+
+ ul.ribbon-badge li.strip:nth-child(2){
+/*transform*/
+-webkit-transform:rotate(30deg);
+   -moz-transform:rotate(30deg);
+    -ms-transform:rotate(30deg);
+     -o-transform:rotate(30deg);
+        transform:rotate(30deg);
+}
+ul.ribbon-badge li.strip:nth-child(3){
+/*transform*/
+-webkit-transform:rotate(60deg);
+   -moz-transform:rotate(60deg);
+    -ms-transform:rotate(60deg);
+     -o-transform:rotate(60deg);
+        transform:rotate(60deg);
+}
+ul.ribbon-badge li.strip:nth-child(4){
+/*transform*/
+-webkit-transform:rotate(90deg);
+   -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+     -o-transform:rotate(90deg);
+        transform:rotate(90deg);
+}
+ul.ribbon-badge li.strip:nth-child(5){
+/*transform*/
+-webkit-transform:rotate(120deg);
+   -moz-transform:rotate(120deg);
+    -ms-transform:rotate(120deg);
+     -o-transform:rotate(120deg);
+        transform:rotate(120deg);
+}
+ul.ribbon-badge li.strip:nth-child(6){
+/*transform*/
+-webkit-transform:rotate(150deg);
+   -moz-transform:rotate(150deg);
+    -ms-transform:rotate(150deg);
+     -o-transform:rotate(150deg);
+        transform:rotate(150deg);
+}
+  
+ul.ribbon-badge li.strip:after{
+content:"";
+display:inline-block;
+background:#3875ff;
+width:250px;
+height:35px;
+left:-3px;
+top:105px;
+/*transform*/
+-webkit-transform:rotate(10deg);
+   -moz-transform:rotate(10deg);
+    -ms-transform:rotate(10deg);
+     -o-transform:rotate(10deg);
+        transform:rotate(10deg);
+}
+ 
+ul.ribbon-badge, 
+ul.ribbon-badge li.strip, 
+ul.ribbon-badge li.strip:after,
+ul.ribbon-badge li.strip:before{
+            background:#0093ff;
+            background: linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            linear-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+     background: -webkit-linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            -webkit-linear-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+    background:-webkit-gradient(linear,left bottom,right top,color-stop(40%,transparent),color-stop(40%,rgba(113, 113, 113, 0.28)),color-stop(60%,rgba(241, 26, 26, 0.85)),color-stop(60%,transparent)),-webkit-gradient(linear, left top, left bottom, from(rgba(0, 147, 255, 0.6)),to(rgba(239, 24, 24, 0.6)));
+     background: -moz-linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            -moz-linear-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+     background: -o-linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            -o-linear-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+     background: -ms-linear-gradient(45deg,transparent 40%,rgba(113, 113, 113, 0.28) 40%,rgba(178, 216, 255, 0.85) 60%,transparent 60%),
+            -ms-gradient(rgba(0, 147, 255, 0.6),rgba(0, 147, 255, 0.6));
+            background-size: 4px 4px;
+}
+  
+ul.ribbon-badge li.strip:before{
+    content:"";
+    display:inline-block;
+    background:radial-gradient(circle,black,rgba(62, 151, 255, 0.25));
+    width:250px;
+    height:40px;
+    position:absolute;
+}
+
+ul.ribbon-badge li.inner{
+    z-index:10;
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background-color:#0093ff;
+    background: linear-gradient(90deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),linear-gradient(#67bfff,#22a2ff);
+    background: -webkit-linear-gradient(0deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),-webkit-linear-gradient(#67bfff,#22a2ff);
+    background: -webkit-gradient(linear, left top, right top, color-stop(30%,transparent),color-stop(30%,rgba(0, 130, 226, 0.59)),color-stop(70%,rgba(106, 192, 255, 0.72)),color-stop(70%,transparent)), -webkit-gradient(linear, left top, left bottom, from(#67bfff),to(#22a2ff));
+    background: -moz-linear-gradient(0deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),-moz-linear-gradient(#67bfff,#22a2ff);
+    background: -o-linear-gradient(0deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),-o-linear-gradient(#67bfff,#22a2ff);
+    background: -ms-linear-gradient(0deg,transparent 30%,rgba(0, 130, 226, 0.59) 30%,rgba(106, 192, 255, 0.72) 70%,transparent 70%),-ms-linear-gradient(#67bfff,#22a2ff);
+    background-size: 3px 3px;
+    position:absolute;
+    left:36px;
+    top:39px;
+    box-shadow:
+        0 0 0 1px rgba(253, 253, 253, 0.26)  inset,
+        0 0 0 3px #33a9ff  inset,
+        0 0 0 4px #2fa7ff inset,
+        0 0 2px 5px rgba(0, 57, 98, 0.62) inset,
+        0 0 5px 0 rgba(0, 0, 0, 0.57),
+        0 0 40px 5px rgba(0, 0, 0, 0.42);
+} 
+
+
+ul.ribbon-badge li.inner:after,
+ul.ribbon-badge li.inner:before{
+    display:none;
+}
+ul.ribbon-badge li.inner span{
+    position:absolute;
+    color:#3379ff;
+    color:rgba(51, 121, 255, 0.48);
+    text-align:center;
+    font-size:25px;
+    font-weight:bolder;
+    font-family:verdana;
+    text-transform:uppercase;
+    line-height:30px;
+    letter-spacing:-3px;
+    top:45px;
+    left:-2px;
+    
+}
+/*following lines will add inner shadow effect to text*/
+ul.ribbon-badge li.inner span:before, .inner span:after{
+    content: attr(title);
+    position:absolute;
+}
+ul.ribbon-badge li.inner span:before{
+    top:1px;
+    left:1px;
+    color:#262626;
+    color:rgba(38, 38, 38, 0.39);
+}
+ul.ribbon-badge li.inner span:after{
+    top:2px;
+    left:2px;
+    color:#1b8eff;
+    color:rgba(27, 142, 255, 0.29);
+}
+
+ul.ribbon-badge li.tail{
+    position:absolute;
+    top:220px;
+    background:none;
+    z-index:-1;   
+}  
+ul.ribbon-badge li.tail:before, 
+ul.ribbon-badge li.tail:after{
+    content:"";
+    position:absolute;
+    background-color:#1b8eff;
+    background-image:linear-gradient(0deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+background-image:-webkit-linear-gradient(90deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),-webkit-linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+background-image:-webkit-gradient(linear,left bottom,left top,color-stop(20%,transparent),color-stop(20%,rgba(113, 113, 113, 0.28)),color-stop(40%,rgba(178, 216, 255, 0.85)), color-stop(40%,transparent),color-stop(60%,rgba(113, 113, 113, 0.28)),color-stop(80%,rgba(178, 216, 255, 0.85)),color-stop(80%,transparent)),-webkit-gradient(linear,left top,left bottom,from(rgba(26, 134, 214, 0.6)),to(rgba(0, 89, 154, 0.6))); 
+background-image:-moz-linear-gradient(90deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),-moz-linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+background-image:-o-linear-gradient(90deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),-o-linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+background-image:-ms-linear-gradient(90deg,transparent 20%,rgba(113, 113, 113, 0.28) 20%,rgba(178, 216, 255, 0.85) 40%,transparent 40%,rgba(113, 113, 113, 0.28) 60%,rgba(178, 216, 255, 0.85) 80%,transparent 80%),-ms-linear-gradient(rgba(26, 134, 214, 0.6),rgba(0, 89, 154, 0.6));
+    background-size:4px 4px;
+    box-shadow:8px 0 10px 2px rgba(0, 0, 0, 0.28);  
+            /*backface-visibility*/
+-webkit-backface-visibility:hidden;
+   -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+     -o-backface-visibility:hidden;
+        backface-visibility:hidden;
+    width:0;
+    height:0;
+    border:25px solid transparent;
+    left:0;
+    border-left:25px solid rgb(41, 41, 41);
+    border-right-width:150px;
+}
+
+ul.ribbon-badge li.tail:before{
+-webkit-transform:rotate(-75deg);
+   -moz-transform:rotate(-75deg);
+    -ms-transform:rotate(-75deg);
+     -o-transform:rotate(-75deg);
+        transform:rotate(-75deg);
+}
+ul.ribbon-badge li.tail:after{
+-webkit-transform:rotate(-105deg);
+   -moz-transform:rotate(-105deg);
+    -ms-transform:rotate(-105deg);
+     -o-transform:rotate(-105deg);
+        transform:rotate(-105deg);
+        top:0;
+        left:70px;
+}
+.badge{margin-left:15px; display:inline-block;min-width:10px;padding:3px 7px;font-size:13px;font-weight:bold;color:#ffffff;line-height:1;vertical-align:middle;white-space:nowrap;text-align:center;background-color:#2780e3;border-radius:10px;
+  
+  }.badge:empty{display:none}
+</style></head><body>
+<div class="title">
+    <h3 style="text-align:center;"><img src="http://umbralcapacitacion.com/assets/umbral.png" style="width:250px"></h3>
+    <h1>Depilación</h1>
+    <h3>Curso presencial - Inscríbete!<br><div class="badge">2 meses</div><div class="badge">06/09/2017</div><div class="badge">Miercoles</div><br><a style="padding-left: 15px;">umbralcapacitacion.com</a>
+      <ul class="ribbon-badge">
+    <li class="inner"><img src="img/omee.png" style="
+    width: 100%;
+    margin-left: -2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="strip"></li>
+    <li class="tail"></li>
+</ul>
+
+    </h3>
+  </div>
+
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.3/dat.gui.min.js'></script>
+<script>var canvas, bg, wh, ctx, max_num;
+
+
+var ctrl = {
+  a: 10,
+  b: 40,
+  c: 10,
+  d: 20
+}
+
+var gui = new dat.GUI();
+dat.GUI.toggleHide();
+gui.add(ctrl, 'a', 5, 14).step(1);
+gui.add(ctrl, 'b', 20, 60).step(1);
+gui.add(ctrl, 'c', 3, 20).step(2);
+gui.add(ctrl, 'd', 18, 30).step(1);
+
+
+var CENTER_CANVAS = false
+
+
+hue = 100;
+
+window.onload = init;
+
+function init() {
+  // create a canvas element
+  canvas = document.createElement("canvas")
+
+  // attach element to DOM
+  document.body.appendChild(canvas)
+
+  // background color (hsl)
+  bg = {h: 320, s:10, l:100}
+
+  wh = window.innerWidth < window.innerHeight ? window.innerWidth : window.innerHeight
+
+  ctx = canvas.getContext("2d")
+
+  resizeCanvas()
+
+  new Stem()
+  new Stem()
+  new Stem()
+  
+  onUpdate()
+}
+
+
+function resizeCanvas() {
+  // setup the canvas size to match the window
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
+  
+  wh = window.innerWidth < window.innerHeight ? window.innerWidth : window.innerHeight
+  
+  // set the 0,0 point to the middle of the canvas, this is not necessary but it can be handy
+  if (CENTER_CANVAS) {
+    ctx.translate(canvas.width / 2, canvas.height / 2)
+  }
+  
+  fill(bg, 1)
+}
+
+// re-setup canvas when the size of the window changes 
+window.addEventListener("resize", resizeCanvas)
+
+function onUpdate() {
+  window.requestAnimationFrame(function() {onUpdate()})
+
+  fill(bg, 0.012)
+
+  for (var i = 0; i < stems.length; i++){
+    stems[i].draw()
+  }
+}
+// fill entire canvas with a preset color
+function fill(hsl, amt) {
+  ctx.beginPath(); // start path
+  if(CENTER_CANVAS){
+    ctx.rect(- canvas.width / 2, - canvas.height / 2, canvas.width, canvas.height) // set rectangle to be the same size as the window
+  } else {
+    ctx.rect(0, 0, canvas.width, canvas.height) // set rectangle to be the same size as the window
+  }
+  ctx.fillStyle = `hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, ${amt})` // use the rgb array/color for fill, and amt for opacity
+  ctx.fill() // do the drawing
+}
+
+
+function drawCircle(x, y, r, color) {
+  ctx.beginPath()
+  ctx.arc(x ,y , r, 0, 2 * Math.PI)
+  ctx.fillStyle = color || 'white'
+  ctx.fill()
+  ctx.closePath()
+}
+
+
+var stems = [];
+
+
+function Stem (x, y, r) {
+  stems.push(this)
+  // this.x = x || Math.random() * canvas.width
+  // this.y = y || Math.random() * canvas.height
+  this.x = x || Math.random() * canvas.width
+  this.y = canvas.height
+
+  this.angle = Math.random() 
+  this.angleChange = 0.003 + Math.random() * 0.004
+  this.angleChangeDest = this.angleChange
+  this.velocity = 5
+
+  this.history = []
+  this.leaves = []
+  this.s = 0
+  this.sMax = 5
+  this.maxHistory = 20
+
+  this.decay = false;
+  this.hue = hue
+  
+  this.getNewCenter = function () {
+    // pick a new radius
+    var r = Math.round(Math.random() * 70 + 10)
+    
+    var phase = this.phase / this.r1c
+  }
+  
+  this.update = function () {
+    this.s = (this.s + 1) % ctrl.c;
+
+
+    this.angle += this.angleChange
+
+    this.hue = hue * 0.01 + this.hue * 0.99
+    this.angleChange = this.angleChangeDest * 0.0001 + this.angleChange * 0.9999
+    
+    if(Math.random() > 0.96){
+      this.angleChange = -this.angleChange
+      this.angleChangeDest = -this.angleChangeDest
+      // this.angleChangeDest = (Math.random() - 0.5 ) * 0.03;
+    }
+
+    if(Math.random() > 0.95){
+      this.angleChangeDest = (Math.random() - 0.6 ) * 0.03;
+    }
+
+    if(this.decay){
+      this.history.pop()
+      if (this.history.length == 0) {
+        this.kill();
+      }
+      return null;
+    }
+
+    if(this.x < (0 + 30) || this.x > (canvas.width + 30) ||
+      this.y < (0 + 30 )|| this.y > (canvas.height + 30))
+    {
+      // start decay
+      this.decay = true
+
+      // create new
+      new Stem()
+      return
+    }
+
+    var newx = this.x + Math.cos(this.angle * Math.PI * 2) * this.velocity;
+    var newy = this.y + Math.sin(this.angle * Math.PI * 2) * this.velocity;
+
+    if (this.s == 0) {
+      // add leaf
+      this.leaves.unshift(new Leaf(this.x, this.y, newx, newy, 1))
+      this.leaves.unshift(new Leaf(this.x, this.y, newx, newy, -1))
+    }
+    
+    var xy = [
+      this.x = newx,
+      this.y = newy
+    ]
+    
+    this.history.unshift(xy)
+    
+    if (this.history.length > this.maxHistory) {
+      this.history.pop()
+    }
+
+    if (this.leaves.length > this.maxHistory/ctrl.c * 2) {
+      this.leaves.pop()
+    }
+
+    // update leaves
+    for (var i = this.leaves.length - 1; i >= 0; i--) {
+      this.leaves[i].update()
+    };
+  }
+  this.kill = function () {
+    while (this.leaves.length > 0 ){
+      this.leaves.pop();
+    }
+
+    var i = stems.indexOf(this)
+    stems.splice(i, 1)
+  }
+  
+  this.draw = function () {
+    this.update()
+    
+    if(this.history.length > 1){
+      ctx.beginPath()
+      // ctx.strokeStyle = `hsla(${this.hue}, 100%, 50%, 0.5)`
+      ctx.strokeStyle = `red`
+      ctx.lineCap = 'round'
+      ctx.lineWidth = 3
+      ctx.moveTo(this.history[0][0], this.history[0][1])
+      ctx.lineTo(this.history[1][0], this.history[1][1])
+      // for (var i = 1; i < this.history.length; i ++) {
+      //   ctx.lineTo(this.history[i][0], this.history[i][1])
+      // }
+      ctx.stroke()
+    }
+
+    // draw leaves
+    for (var i = this.leaves.length - 1; i >= 0; i--) {
+      this.leaves[i].draw()
+    };
+  }
+  
+  return this;
+}
+
+function Leaf (x, y, vx, vy, d) {
+  this.x = x;
+  this.y = y;
+  this.vx = vx;
+  this.vy = vy;
+  this.d = d
+  this.angle = Math.atan2(vy-y, vx-x)
+  this.s = 0;
+  this.a = ctrl.a;
+  this.b = ctrl.b;
+  this.sMax = ctrl.d;
+  this.history = []
+
+  this.update = function () {
+    this.s++
+    if(this.s < this.sMax){
+      var r = this.s / this.sMax
+      this.history.unshift([
+        this.x + r * this.b * Math.cos(this.angle),
+        this.y + r * this.b * Math.sin(this.angle),
+        0.1 + r * this.a
+      ])
+
+      this.angle += this.d / this.sMax
+    }
+  }
+
+  this.draw = function () {
+    var h;
+    h = this.history[0]
+    drawCircle(h[0], h[1], h[2], 'red')
+    // for (var i = this.history.length - 1; i >= 0; i--) {
+    //   h = this.history[i]
+    //   drawCircle(h[0], h[1], h[2], 'red')
+    // };
+  }
+
+}
+
+//# sourceURL=pen.js
+</script>
+</body></html>
