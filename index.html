@@ -997,69 +997,6 @@ a {
   left: -50px;
 }
 
-.wrapper .tab-container {
- margin: 0 !important;
- padding: 0 !important;
- position: relative;
- top: 0;
- left: 0;
- height: 50px;
- transition: left .3s ease-in-out;
- -webkit-transition: left .3s ease-in-out;
- -moz-transition: left .3s ease-in-out;
-
-
-}
-.wrapper .tab-container li {
-  font: normal 14px;
-  background: rgba(0,0,0,.1) !important;
-  margin: 0 !important;
-  padding: 15px 20px;
-  list-style: none;
-  float: left;
-  border-right: 1px solid rgba(255,255,255,.2);
-  height:50px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.wrapper .tab-container li:hover {
-  opacity: 0.6;
-}
-
-.wrapper .tab-container li a {
-  background-image: none !important;
-  padding-left: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0!important;
-  color: #222;
-}
-
-.wrapper .tab-container li a span {
-  background-image: none !important;
-  background-repeat: 0 !important;
-  background-position: 0 !important;
-  padding-right: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.wrapper .tab-container li.here, .wrapper .tab-container li.here a {
-  font-weight: normal !important;
-  color: #00ac7f !important;
-}
 .umbralli {
   vertical-align:top;
 }
@@ -2116,7 +2053,233 @@ footer {
   -webkit-transform: rotate(-225deg);
           transform: rotate(-225deg);
 }
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+
+* {
+  box-sizing: border-box;
+}
+
+#cursos {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+  -webkit-justify-content: center;
+    align-items: center;
+  -webkit-align-items: center;
+}
+
+#cursos {
+    background-color: #eaeaea;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+  position: relative;
+}
+
+.carousel-item {
+  visibility:visible;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+      -webkit-align-items: center;
+    -webkit-justify-content: flex-end;
+    position: relative;
+    background-color: #fff;
+    flex-shrink: 0;
+   -webkit-flex-shrink: 0;
+    position: absolute;
+    z-index: 0;
+  transition: 0.6s all linear;
+}
+
+.carousel-item__info {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+    display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-flex-direction: column;
+  
+  order: 1;
+  left: 0;
+  margin: auto;
+  padding: 0 40px;
+  width: 40%;
+
+}
+
+.carousel-item__image {
+    width: 60%;
+    height: 100%;
+    order: 2;
+    align-self: flex-end;
+    flex-basis: 60%;
+  
+      -webkit-order: 2;
+    -webkit-align-self: flex-end;
+    -webkit-flex-basis: 60%;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   position:relative;
+  transform: translateX(100%);
+  transition: 0.6s all ease-in-out;
+}
+
+.carousel-item__subtitle {
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 3px;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #7E7E7E;    
+    font-weight: 700;
+    transform: translateY(25%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s all ease-in-out;
+}
+
+.carousel-item__title {
+    margin: 15px 0 0 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    line-height: 45px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #2C2C2C;
+    transform: translateY(25%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s all ease-in-out;
+}
+
+.carousel-item__description {
+    transform: translateY(25%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s all ease-in-out;
+    margin-top: 35px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #7e7e7e;
+    line-height: 22px;
+    margin-bottom: 35px;
+}
+
+.carousel-item--1 .carousel-item__image{
+  background-image: url('https://images.pexels.com/photos/991012/pexels-photo-991012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
+
+
+.carousel-item--2 .carousel-item__image{
+  background-image: url('https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.carousel-item--3 .carousel-item__image{
+  background-image: url('https://images.pexels.com/photos/92733/pexels-photo-92733.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.carousel-item--4 .carousel-item__image{
+  background-image: url('https://images.pexels.com/photos/1008732/pexels-photo-1008732.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.carousel-item--5 .carousel-item__image{
+  background-image: url('https://images.pexels.com/photos/1029614/pexels-photo-1029614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
+
+
+
+
+.carousel-item__container{
+
+}
+
+.carousel-item__btn {
+    width: 35%;
+    color: #2C2C2C;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin: 0;
+    width: 35%;
+    font-weight: 700;
+  text-decoration: none;
+      transform: translateY(25%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s all ease-in-out;
+}
+
+.carousel__nav {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+  bottom: 0;
+}
+
+.carousel__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+  fill: #5d5d5d;
+}
+
+.carousel__arrow {
+    cursor: pointer;
+    display: inline-block;
+    padding: 11px 15px;
+    position: relative;
+}
+
+.carousel__arrow:nth-child(1):after {
+    content:'';
+    right: -3px;
+    position: absolute;
+    width: 1px;
+    background-color: #b0b0b0;
+    height: 14px;
+    top: 50%;
+    margin-top: -7px;
+}
+
+.active{
+   z-index: 1;
+  display: flex;
+  visibility:visible;
+}
+
+.active .carousel-item__subtitle, .active .carousel-item__title, .active .carousel-item__description,.active .carousel-item__btn{
+    transform: translateY(0);
+    opacity: 1;
+  transition: 0.6s all ease-in-out;
+    visibility: visible;
+}
+
+
+
+.active .carousel-item__image{ 
+transition: 0.6s all ease-in-out;
+transform: translateX(0);
+}
 .accordionItem {
   height: auto;
   overflow: hidden;
@@ -2390,11 +2553,7 @@ footer {
   </div>
 
   </div>
-
-
-
-
-
+</div>
 </div>
   <!-- Slider -->
   <section class="velo-slides" data-velo-slider="on" data-velo-theme="light">
@@ -2403,11 +2562,14 @@ footer {
     <section class="velo-slide">
       
       <!-- Pretitle Hint -->
-      <span class="velo-slider__hint"><span><span>CERTIFICACIÓN Y GESTIÓN</span></span></span> 
+      <span class="velo-slider__hint"><span><span>CAPACITACIÓN Y GESTIÓN</span></span></span> 
       <!-- Slide BG -->
       <div class="velo-slide__bg">      
         <!-- Img -->
-        <figure id="umbralcube" class="velo-slide__figure"></figure>
+        <video autoplay loop>
+  <source src="assets/bg.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
       </div>
     
       <!-- Header -->
@@ -2445,30 +2607,81 @@ footer {
       <!-- Header -->
       <header class="velo-slide__header" style="text-align:center;">
 
+      		<div id="cursos">
+<div class="carousel">
+  <div class="carousel__nav">
+   <span id="moveLeft" class="carousel__arrow">
+        <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
+    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
+</svg>
+    </span>
+    <span id="moveRight" class="carousel__arrow" >
+      <svg class="carousel__icon"  width="24" height="24" viewBox="0 0 24 24">
+  <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+</svg>    
+    </span>
+  </div>
+  <div class="carousel-item carousel-item--1">
+    <div class="carousel-item__image"></div>
+    <div class="carousel-item__info">
+      <div class="carousel-item__container">
+      <h2 class="carousel-item__subtitle">The grand moment </h2>
+      <h1 class="carousel-item__title">Le tour</h1>
+      <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <a href="#" class="carousel-item__btn">Explore the tour</a>
+        </div>
+    </div>
+  </div>
+  <div class="carousel-item carousel-item--2">
+    <div class="carousel-item__image"></div>
+    <div class="carousel-item__info">
+      <div class="carousel-item__container">
+      <h2 class="carousel-item__subtitle">The big window </h2>
+      <h1 class="carousel-item__title">Minimal window</h1>
+      <p class="carousel-item__description">Clear Glass Window With Brown and White Wooden Frame iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+      <a href="#" class="carousel-item__btn">Read the article</a>
+        </div>
+    </div>
+  </div>
+    <div class="carousel-item carousel-item--3">
+    <div class="carousel-item__image"></div>
+    <div class="carousel-item__info">
+      <div class="carousel-item__container">
+      <h2 class="carousel-item__subtitle">Tropical palms </h2>
+      <h1 class="carousel-item__title">Palms</h1>
+      <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <a href="#" class="carousel-item__btn">Explore the palms</a>
+        </div>
+    </div>
+  </div>
+  
+   <div class="carousel-item carousel-item--4">
+    <div class="carousel-item__image"></div>
+    <div class="carousel-item__info">
+      <div class="carousel-item__container">
+      <h2 class="carousel-item__subtitle">Beach </h2>
+      <h1 class="carousel-item__title">The beach </h1>
+      <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <a href="#" class="carousel-item__btn">Explore the beach</a>
+        </div>
+    </div>
+  </div>
+  
+ <div class="carousel-item carousel-item--5">
+    <div class="carousel-item__image"></div>
+    <div class="carousel-item__info">
+      <div class="carousel-item__container">
+      <h2 class="carousel-item__subtitle">The white building </h2>
+      <h1 class="carousel-item__title">White building</h1>
+      <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <a href="#" class="carousel-item__btn">Read the article</a>
+        </div>
+    </div>
+  </div>
+  
+</div>
+</div>
 
-          <div class="wrapper">
-    <ul class="tab-container">
-      <li><i class="material-icons">motorcycle</i> <span class="umbralli">Motovehículos</span></li>
-      <li><i class="material-icons">line_style</i> <span class="umbralli">Construcciones</span></li>
-      <li><i class="material-icons">polymer</i> <span class="umbralli">Herrería</span></li>
-      <li><i class="material-icons">directions_car</i> <span class="umbralli">Mandatarios del Automotor</span></li>
-      <li><i class="material-icons">lightbulb_outline</i> <span class="umbralli">Masaje Holístico</span></li>
-      <li><i class="material-icons">content_cut</i> <span class="umbralli">Peluquería</span></li>
-      <li><i class="material-icons">bubble_chart</i> <span class="umbralli">Maquillaje</span></li>
-      <li><i class="material-icons">toys</i> <span class="umbralli">Manicuría</span></li>
-      <li><i class="material-icons">filter_vintage</i> <span class="umbralli">Depilación</span></li>
-      <li><i class="material-icons">local_dining</i> <span class="umbralli">Repostería</span></li>
-      <li><i class="material-icons">cake</i> <span class="umbralli">Decoración de Tortas</span></li>
-      <li><i class="material-icons">local_cafe</i> <span class="umbralli">Idiomas</span></li>
-      <li><i class="material-icons">music_note</i> <span class="umbralli">Música</span></li>
-      <li><i class="material-icons">memory</i> <span class="umbralli">Informática</span></li>
-      <li><i class="material-icons">phonelink</i> <span class="umbralli">Programación</span></li>
-      <li><i class="material-icons">remove_red_eye</i> <span class="umbralli">Diseño</span></li>
-    </ul>
- </div>
-        <h3 class="velo-slide__title hidexs
-        " style="width: 90%;"><span class="oh"><span>La puerta</span></span><span class="oh"><span>al futuro está abierta</span></span></h3>
-        <p class="velo-slide__text" style="width: 90%; text-align:center; max-width:90%; "><span class="oh"><span><div class="hidexs" style="text-align:center; width: 90%">¿Estás prestando atención?<br>Bien.<br><br></div>Nos dirigimos hacia un mundo donde la ciencia y la humanidad lleve progreso y felicidad a todas las casas. A todas las personas. A tí.<br>Desliza la flecha en la esquina superior izquierda. Inscríbete a decenas de cursos. Asómbrate. Conoce personas con puntos de vista diferentes. Sigue en movimiento.</span></span></p>
         <div class="botonwhite" onclick="inscribirse()">INSCRIBIRSE</div>
       </header>
     </section>
@@ -2700,7 +2913,6 @@ Copyright · Umbral<br>Quay
     <script src='assets/quay.db.js'></script>
 <script src='assets/quay.login.js'></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV0CrENf8pLe_Z1_cdXLsktKg9rf0a15g&callback=initMap"></script>
-<script src='assets/three.min.js'></script></script><script src='assets/OrbitControls.js'></script><script src='assets/SubdivisionModifier.js'></script>
 <script src='assets/jquery.min.js'></script><script src='assets/velocity.js'></script><script src='assets/velocity.ui.js'></script>
 <script>
 $(".wrap ul li").click(function () {
@@ -3188,235 +3400,6 @@ item.on('click', function() {
   }
 });
 
-
-var scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0x000000, 10, 15);
-      var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
-      var renderer = new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight );
-      $('#umbralcube').append(renderer.domElement);
-      //Create elements here:
-function randint(min, max) {
-  return Math.floor(Math.random() * max) + min
-}
-function RGB(r, g, b) {
-  function colorcheck(c) {
-  if (c > 255) {
-    c = 255
-  }
-  if (c < 0) {
-    c = 0
-  }
-    return c
-  }
-  r = colorcheck(r)
-  g = colorcheck(g)
-  b = colorcheck(b)
-  return 'rgb(' + r + ',' + g + ',' + b + ')'
-}
-function rgb2hex(rgb){
- rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
- return (rgb && rgb.length === 4) ? "0x" +
-  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
-}
-function rgb2color(r, g, b) {
-  return rgb2hex(RGB(r, g, b))
-}
-
-function sin(t, h) {
-  return Math.sin(t) * h
-}
-var cubes = []
-for (var x = -6; x <= 6; x++) {
-  for (var z = -6; z <= 6; z++) {
-    var cube = []
-    var geometry = new THREE.BoxGeometry( 1, 1, 1, 6, 6, 6 );
-    var smooth = geometry.clone();
-    var subdiv = 1;
-    var modifier = new THREE.SubdivisionModifier( subdiv );
-modifier.modify( smooth );
-    if (Math.random() > 0.75) {
-      var ccolor = 'blue'
-      cube.colored = true
-    } else {
-       var ccolor = 'black'
-       cube.colored = false
-    }
-    cube.material = new THREE.MeshPhongMaterial( { color: ccolor } )
-    cube.mesh = new THREE.Mesh(smooth, cube.material)
-    scene.add( cube.mesh );
-    cube.mesh.position.x = x
-    cube.mesh.position.z = z
-    cube.height = randint(1,10)/10
-    cube.aniOffset = randint(1,400)/100
-    cubes.push(cube)
-  }
-}
-for (var x = -5; x <= 5; x+= 5) {
-  for (var z = -5; z <= 5; z+= 5) {
-    var light = new THREE.PointLight( 'white', 1, 7.5 );
-    light.position.set( x, 2, z );
-    scene.add( light );
-  }
-}
-var oControls = new THREE.OrbitControls(camera, renderer.domElement);
-      //end of elements
-camera.position.y = 8
-camera.position.x = 6
-camera.position.z = 4
-lookAt = new THREE.Vector3(0,0,0)
-camera.lookAt(lookAt)
-      var render = function () {
-        requestAnimationFrame( render );
-        mainloop()
-        renderer.render(scene, camera);
-      };
-var color = {}
-    color.r = 0
-    color.g = 0
-    color.b = 255
-    color.rs = 0
-    color.gs = 0
-    color.bs = 0
-    color.rt = 0
-    color.gt = 0
-    color.bt = 255
-var time = 0
-function mainloop() {
-  time += 1
-  camera.position.y += sin((time*0.005)+10, 0.005)
-  camera.position.x += sin((time*0.004)+5, 0.005)
-  camera.position.z += sin((time*0.006), 0.005)
-  camera.rotation.z += sin((time*0.0045)+15, 0.002)
-  lookAt = new THREE.Vector3(0,0,0)
-  camera.lookAt(lookAt);
-  //console.log(camera.position)
-  if (Math.abs(color.r - color.rt) >= 5) {
-      color.r += color.rs
-    }
-    if (Math.abs(color.g - color.gt) >= 5) {
-      color.g += color.gs
-    }
-    if (Math.abs(color.b - color.bt) >= 5) {
-      color.b += color.bs
-    }
-    if (Math.abs(color.r - color.rt) < 5 &&
-      Math.abs(color.g - color.gt) < 5 &&
-      Math.abs(color.b - color.bt) < 5) {
-      color.rt = randint(0, 255)
-      color.gt = randint(0, 255)
-      color.bt = randint(0, 255)
-      var divisor = 20
-      if (color.rt > color.r) {
-        color.rs = randint(5, 45) / divisor
-      } else {
-        color.rs = -randint(5, 45) / divisor
-      }
-      if (color.gt > color.g) {
-        color.gs = randint(5, 45) / divisor
-      } else {
-        color.gs = -randint(5, 45) / divisor
-      }
-      if (color.bt > color.b) {
-        color.bs = randint(5, 45) / divisor
-      } else {
-        color.bs = -randint(5, 45) / divisor
-      }
-    }
-  
-  var r = Math.round(color.r)
-  var g = Math.round(color.g)
-  var b = Math.round(color.b)
-  
-  for (var i = 0; i < cubes.length; i++) {
-    var cube = cubes[i]
-    cube.mesh.position.y = sin((time/100)+cube.aniOffset,cube.height)
-    if (cube.colored) {
-    cube.mesh.material.color.setHex( rgb2color(r, g, b) );
-    }
-  }
-}
-      render();
-
-
-window.addEventListener( 'resize', onWindowResize, false );
-
-function onWindowResize(){
-
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize( window.innerWidth, window.innerHeight );
-
-}
-
-var element = $('.tab-container li');
-var slider = $('.tab-container');
-var sliderWrapper = $('.wrapper');
-var totalWidth = sliderWrapper.innerWidth();
-var elementWidth = element.outerWidth();
-var sliderWidth = 0;
-var positionSlideX = slider.position().left;
-var newPositionSlideX = 0;
-
-sliderWrapper.append('<span class="prev-slide"><i class="material-icons">fast_rewind</i></span><span class="next-slide"><i class="material-icons">fast_forward</i></span>');
-
-element.each(function(){
-  sliderWidth = sliderWidth + $(this).outerWidth() + 1;
-});
-
-slider.css({
-  'width': sliderWidth
-});
-
-$('.next-slide').click(function(){
-  if(newPositionSlideX>(totalWidth-sliderWidth)){
-    newPositionSlideX = newPositionSlideX - elementWidth;
-    slider.css({
-      'left' : newPositionSlideX
-   }, check());
-  };
-});
-
-$('.prev-slide').click(function(){
-  if(newPositionSlideX>=-sliderWidth){
-    newPositionSlideX = newPositionSlideX + elementWidth;
-    slider.css({
-      'left' : newPositionSlideX
-   }, check());
-  };
-});
-
-function check() {;
-  if( sliderWidth >= totalWidth && newPositionSlideX > (totalWidth-sliderWidth)){
-     $('.next-slide').css({
-      'right' : 0
-    });
-  } else {
-     $('.next-slide').css({
-      'right' : -$(this).width()
-    });
-  };
-
-  if( newPositionSlideX < 0){
-     $('.prev-slide').css({
-      'left' : 0
-    });
-  } else {
-    $('.prev-slide').css({
-      'left' : -$(this).width()
-    });
-  };
-};
-
-$(window).resize(function(){
-  totalWidth = sliderWrapper.innerWidth();
-  check();
-});
-check();
 function ToastBuilder(options) {
   // options are optional
   var opts = options || {};
@@ -4219,6 +4202,40 @@ $(document).on('click', '.logout', function() {
   });
 
 jQuery(document).ready(function($){
+	  $('.carousel-item').eq(0).addClass('active');
+  var total = $('.carousel-item').length;
+  var current = 0;
+  $('#moveRight').on('click', function(){
+    var next=current;
+    current= current+1;
+    setSlide(next, current);
+  });
+  $('#moveLeft').on('click', function(){
+    var prev=current;
+    current = current- 1;
+    setSlide(prev, current);
+  });
+  function setSlide(prev, next){
+    var slide= current;
+    if(next>total-1){
+     slide=0;
+      current=0;
+    }
+    if(next<0){
+      slide=total - 1;
+      current=total - 1;
+    }
+           $('.carousel-item').eq(prev).removeClass('active');
+           $('.carousel-item').eq(slide).addClass('active');
+      setTimeout(function(){
+
+      },800);
+    
+
+    
+    console.log('current '+current);
+    console.log('prev '+prev);
+  }
   //set your google maps parameters
   var $latitude = -31.494525,
     $longitude = -60.733417,
