@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Poppins:400,700|Montserrat:300,400,600'>
-    <meta name="description" content="I'm a full stack developer who has worked with native and hybrid technologies. My interest goes to the universe, to the science, to the music, to books & films, to you. Get in touch! → fork@matikbird.com">
+    <meta name="description" content="Cambia el curso de tu vida, inscribiéndote al curso que más te guste.">
     <meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
     <meta prefix="og: http://ogp.me/ns#" property="og:url" content="http://umbralcapacitacion.com" />
     <meta prefix="og: http://ogp.me/ns#" property="og:title" content="Umbral ─ Cada semana hacemos una nueva cara para ayudarte a encarar la semana. Los meses. Los años. Únete; una capacitación profesional y una pasión puede resultar en la vida libre y hermosa." />
@@ -100,7 +100,7 @@ body {
     position:relative;
     text-align:center;
    }
-  .dropdown {
+  .dropdowns {
        position:absolute !important;
      transform: translateX(-50%) !important;
 
@@ -123,7 +123,7 @@ body {
 
 @media (max-width: 500px) {
 
-  .dropdown {
+  .dropdowns {
 
      right: -1% !important;
   }
@@ -131,7 +131,7 @@ body {
 }
 @media (max-width: 400px) {
 
-  .dropdown {
+  .dropdowns {
 
      right:-20% !important;
   }
@@ -882,7 +882,7 @@ a {
   z-index:9;
   width:100%;
 }
-.dropdown {
+.dropdowns {
   width: 250px;
   height: 50px;
   margin: 15px auto;
@@ -1969,7 +1969,7 @@ footer {
 }
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
+#progressbar li.activec:before,  #progressbar li.activec:after{
   background: #27AE60;
   color: white;
 }
@@ -2261,13 +2261,13 @@ footer {
     margin-top: -7px;
 }
 
-.active{
+.actived{
    z-index: 1;
   display: flex;
   visibility:visible;
 }
 
-.active .carousel-item__subtitle, .active .carousel-item__title, .active .carousel-item__description,.active .carousel-item__btn{
+.actived .carousel-item__subtitle, .actived .carousel-item__title, .actived .carousel-item__description,.actived .carousel-item__btn{
     transform: translateY(0);
     opacity: 1;
   transition: 0.6s all ease-in-out;
@@ -2276,7 +2276,7 @@ footer {
 
 
 
-.active .carousel-item__image{ 
+.actived .carousel-item__image{ 
 transition: 0.6s all ease-in-out;
 transform: translateX(0);
 }
@@ -2426,7 +2426,7 @@ transform: translateX(0);
 
 
 
-<div class="dropdown">
+<div class="dropdowns">
   <div class="item collapse">Ver todos</div>
   <div class="item collapse">Humanidades</div>
   <div class="item collapse">Ciencia</div>
@@ -2554,7 +2554,7 @@ transform: translateX(0);
 
   </div>
 </div>
-</div>
+
   <!-- Slider -->
   <section class="velo-slides" data-velo-slider="on" data-velo-theme="light">
 
@@ -3376,7 +3376,7 @@ var VeloSlider = (function() {
       (settings.$veloSlide.filter('.is-active').is(':last-of-type')) ? $('.mapas').css('display', 'block !important') : $('.mapas').css('display', 'none !important');
       (settings.$veloSlide.filter('.is-active').is(':last-of-type')) ? $('.maparea').css('visibility', 'visible') : $('.maparea').css('visibility', 'hidden');
 
-       (settings.$veloSlide.filter('.is-active').is(':first-of-type')) ? $('.dropdown').removeClass('inactive').addClass('active') : $('.dropdown').removeClass('active').addClass('inactive');
+       (settings.$veloSlide.filter('.is-active').is(':first-of-type')) ? $('.dropdowns').removeClass('inactive').addClass('active') : $('.dropdowns').removeClass('active').addClass('inactive');
 
     },
   };
@@ -3385,7 +3385,7 @@ var VeloSlider = (function() {
 // INIT
 VeloSlider.init();
 
-  var dropdown = $('.dropdown');
+  var dropdown = $('.dropdowns');
 var item = $('.item');
 
 item.on('click', function() {
@@ -4202,7 +4202,7 @@ $(document).on('click', '.logout', function() {
   });
 
 jQuery(document).ready(function($){
-	  $('.carousel-item').eq(0).addClass('active');
+	  $('.carousel-item').eq(0).addClass('actived');
   var total = $('.carousel-item').length;
   var current = 0;
   $('#moveRight').on('click', function(){
@@ -4225,8 +4225,8 @@ jQuery(document).ready(function($){
       slide=total - 1;
       current=total - 1;
     }
-           $('.carousel-item').eq(prev).removeClass('active');
-           $('.carousel-item').eq(slide).addClass('active');
+           $('.carousel-item').eq(prev).removeClass('actived');
+           $('.carousel-item').eq(slide).addClass('actived');
       setTimeout(function(){
 
       },800);
@@ -4519,7 +4519,7 @@ $(".previous").click(function(){
   previous_fs = $(this).parent().prev();
   
   //de-activate current step on progressbar
-  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("actived");
   
   //show the previous fieldset
   previous_fs.show(); 
