@@ -1,0 +1,171 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_live_reload_init-890dc39bb89183d4642d58b1ae5376a0193342f9aed88ea04330dc14c8d52f55.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/GeorgePark/pen/LBPJGV" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+<style class="cp-pen-styles">* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+    height: 100vh;
+	overflow: hidden;
+}
+
+/* Video */
+
+.video-background {
+  background: url(https://images.unsplash.com/photo-1519373344801-14c1f9539c9c?w=1920&h=1080&fit=crop&crop=bottom) no-repeat center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+	  height: 300%;
+	  top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+	  width: 300%;
+	  left: -100%;
+  }
+}
+
+/* Knockout Text */
+
+.knockout-text {
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+    font-size: calc(10px + 13vw + 2.5vh);
+	font-weight: 900;
+	letter-spacing: 0.15em;
+    margin: auto;
+	text-transform: uppercase;
+	user-select: none;
+    -webkit-text-stroke-color: #9f9f9f;
+	-webkit-text-stroke-width: 0.015em;	
+}
+
+.light-theme .knockout-text {
+	background-color: #fff;
+    color: #000;
+    mix-blend-mode: screen;
+}
+
+.dark-theme .knockout-text {
+	background-color: #000;
+    color: #fff;
+    mix-blend-mode: multiply;
+}
+
+/* Change Theme Button */
+
+.theme-btn {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	font-family: inherit;
+	font-size: calc(15px + 0.1vw + 0.5vh);
+	border-width: 0.15em;
+	border-style: solid;
+	border-radius: 0.8em;
+	background-color: transparent;
+	margin: 0 auto;
+	padding: 0.8em 1.2em;
+	cursor: pointer;
+	outline: none;
+	white-space: nowrap;
+	user-select: none;
+}
+
+.light-theme .theme-btn {
+	color: #1a1a1a;
+	border-color: #1a1a1a;
+}
+
+.dark-theme .theme-btn {
+	color: #eee;
+	border-color: #eee;
+}
+</style></head><body>
+<body class="dark-theme">
+
+    <div class="video-background">
+
+        <div class="video-foreground">
+
+            <iframe src="https://www.youtube.com/embed/bog4VzMWP20?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=bog4VzMWP20" frameborder="0" allowfullscreen tabindex="-1"></iframe>
+
+            <h1 class="knockout-text">relax</h1>
+
+        </div>
+
+    </div>
+
+    <button class="theme-btn">Switch to <span class="theme-type">Light</span> Theme</button>
+
+    <!-- External JavaScript File -->
+    <script src="/js/main.js"></script>
+
+</body>
+<script src='//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+<script >//JavaScript to switch theme classes only
+
+//DOM load event
+window.addEventListener("DOMContentLoaded", function () {
+
+    var themeButton = document.querySelector('.theme-btn'),
+        themeType = document.querySelector('.theme-type');
+
+    themeButton.addEventListener('click', function () {
+
+        //Apply theme
+        if (document.body.classList.contains('light-theme')) {
+
+            //Remove light theme
+            document.body.classList.remove('light-theme');
+
+            //Add dark theme
+            document.body.classList.add('dark-theme');
+
+            //Set button text
+            themeType.textContent = 'Light';
+        } else {
+
+            //Remove dark theme
+            document.body.classList.remove('dark-theme');
+
+            //Add light theme
+            document.body.classList.add('light-theme');
+
+            //Set button text
+            themeType.textContent = 'Dark';
+        }
+    });
+});
+//# sourceURL=pen.js
+</script>
+</body></html>
